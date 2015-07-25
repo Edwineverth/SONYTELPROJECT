@@ -23,6 +23,7 @@ class Articulossegunda(models.Model):
 
 
 
+
 class Categoria(models.Model):
     mar_nombre = models.CharField(max_length=30)
     mar_descripcion = models.CharField(max_length=75)
@@ -46,7 +47,6 @@ class Clientes(models.Model):
     cli_estado = models.CharField(max_length=1)
     ciu = models.ForeignKey(Ciudad, blank=True, null=True)
     
-
   
 
 class Detalleproveedor(models.Model):

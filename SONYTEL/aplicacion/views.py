@@ -7,6 +7,7 @@ from datetime import datetime
 from django.shortcuts import render_to_response,get_object_or_404
 from models import *
 from forms import * 
+from django.core.urlresolvers import reverse_lazy
 #IMPORTACION PARA LOS FORMS
 #from forms import * 
 from django.template.context import RequestContext
@@ -46,6 +47,15 @@ class ClienteDetailView(DetailView):
 	def get_template_names(self):
 
 		return 'clientes.html'
+"""class ClienteCreate(CreateView):
+	model  = Clientes
+	def get_template_name(self):
+		return 'clientes.html'
+"""
+class ClienteCreate(CreateView):
+    model = Clientes
+    #fields = ['cli_nombre']
+    success_url=reverse_lazy('home')
 
 "********************************************"
 
