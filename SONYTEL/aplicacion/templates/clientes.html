@@ -1,0 +1,16 @@
+{% extends "inicio.html" %}
+{% block content %}
+	HOLA MUNDO :v
+	{% for cliente in clientes  %}
+	<article>
+		<h3>
+			<a href="{{cliente.cliente}}">{{cliente.cli_cedula}}</a>
+		</h3>
+		<h3>
+			<a href="{{cliente.cliente}}">{{cliente.cli_nombre}}</a>
+		</h3>
+	
+	</article>
+		
+	{% endfor %}
+{% endblock content %}
