@@ -13,10 +13,10 @@
 <span class="label label-default">Buscar</span>
 <div class="well">
   <p>This is the content inside a normal well. Use class 'well-lg' or 'well-sm' for large and small well, respectively. </p>
-    <form method="POST" action="/cliente/listad/">{% csrf_token %}
+    <form method="POST" action="/cliente/buscar/">{% csrf_token %}
 		 <div class="col-lg-6" >
 		      <div class="input-group">
-		        <input type="text" class="form-control" placeholder="Ingrese el cliente a buscar" name="buscado">
+		        <input type="text" class="form-control" placeholder="Ingrese el cliente a buscar" name="buscalo">
 		        <span class="input-group-btn">
 		          <button class="btn btn-default" type="submit" >Buscar</button>
 		        </span></div>
@@ -27,6 +27,43 @@
     <!-- /.col-lg-6 -->
     </br>
     <br/>
+	<div class="table-responsive">
+		<table class="table table-hover">
+	        <thead>
+	          <tr>
+	            <td class="success">#</td>
+	            <td class="success">CEDULA</td>
+	            <td class="success">NOMBRE</td>
+	            <td class="success">APELLIDO</td>
+	            <td class="success">TELEFONO</td>
+	            <td class="success">DIRECCION</td>
+	            <td class="success">EMAIL</td>
+	            <td class="success">ESTADO</td>
+	            <td class="success">CIUDAD</td>
+	          </tr>
+	        </thead>
+	        <tbody >
+	   
+	         
+	          <!-- Aplicadas en las celdas (<td> o <th>) -->
+		          {% for cliente in  clientes %}
+			          <tr>
+			          	<td >{{cliente.id}}</td>
+		          		<td >{{cliente.cli_cedula}}</td>
+			            <td >{{cliente.cli_nombre}}</td>
+			            <td >{{cliente.cli_apellido}}</td>
+			            <td >{{cliente.cli_telefono}}</td>
+			            <td >{{cliente.cli_direccion}}</td>
+			            <td >{{cliente.cli_email}}</td>
+			            <td >{{cliente.cli_estado}}</td>
+			            <td >{{cliente.ciu}}</td>
+			          	
+			           
+			          </tr>
+		          {% endfor %}
+	      	</tbody>
+		</table>
+	</div>
     <ul>
 		{% for cliente in  clientes %}
   			<li><b>Cedula</b>{{cliente.cli_cedula}}</li>
