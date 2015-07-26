@@ -57,7 +57,7 @@ class Migration(migrations.Migration):
                 ('cli_direccion', models.CharField(max_length=75)),
                 ('cli_email', models.CharField(max_length=75)),
                 ('cli_estado', models.CharField(max_length=1)),
-                ('ciu', models.ForeignKey(blank=True, to='aplicacion.Ciudad', null=True)),
+                ('ciu', models.ForeignKey(blank=True, to='sistema.Ciudad', null=True)),
             ],
             options={
             },
@@ -73,7 +73,7 @@ class Migration(migrations.Migration):
                 ('fac_total', models.FloatField()),
                 ('fac_fecha', models.DateField()),
                 ('fac_estado', models.CharField(max_length=1)),
-                ('cli', models.ForeignKey(blank=True, to='aplicacion.Clientes', null=True)),
+                ('cli', models.ForeignKey(blank=True, to='sistema.Clientes', null=True)),
             ],
             options={
             },
@@ -86,7 +86,7 @@ class Migration(migrations.Migration):
                 ('det_cantiadd', models.IntegerField()),
                 ('det_preciou', models.FloatField()),
                 ('det_preciot', models.FloatField()),
-                ('fac', models.ForeignKey(blank=True, to='aplicacion.Factura', null=True)),
+                ('fac', models.ForeignKey(blank=True, to='sistema.Factura', null=True)),
             ],
             options={
             },
@@ -98,7 +98,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('fad_preciou', models.FloatField()),
                 ('fad_preciot', models.FloatField()),
-                ('fac', models.ForeignKey(to='aplicacion.Factura')),
+                ('fac', models.ForeignKey(to='sistema.Factura')),
             ],
             options={
             },
@@ -124,7 +124,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('men_asunto', models.CharField(max_length=30)),
                 ('men_descripcion', models.CharField(max_length=500)),
-                ('cli', models.ForeignKey(to='aplicacion.Clientes')),
+                ('cli', models.ForeignKey(to='sistema.Clientes')),
             ],
             options={
             },
@@ -175,7 +175,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Detalleproveedor',
             fields=[
-                ('pro', models.ForeignKey(primary_key=True, serialize=False, to='aplicacion.Productos')),
+                ('pro', models.ForeignKey(primary_key=True, serialize=False, to='sistema.Productos')),
                 ('kar_precio_proveedor', models.FloatField(db_column='kar_Precio_proveedor')),
                 ('kar_entra', models.IntegerField()),
                 ('kar_sald', models.IntegerField()),
@@ -196,7 +196,7 @@ class Migration(migrations.Migration):
                 ('prov_direccion', models.CharField(max_length=80)),
                 ('prov_telefono', models.CharField(max_length=10, blank=True)),
                 ('prov_estado', models.CharField(max_length=1, blank=True)),
-                ('ciu', models.ForeignKey(blank=True, to='aplicacion.Ciudad', null=True)),
+                ('ciu', models.ForeignKey(blank=True, to='sistema.Ciudad', null=True)),
             ],
             options={
             },
@@ -207,8 +207,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('rep_cantidad', models.IntegerField()),
-                ('man', models.ForeignKey(to='aplicacion.Mantenimiento')),
-                ('pro', models.ForeignKey(to='aplicacion.Productos')),
+                ('man', models.ForeignKey(to='sistema.Mantenimiento')),
+                ('pro', models.ForeignKey(to='sistema.Productos')),
             ],
             options={
             },
@@ -225,8 +225,8 @@ class Migration(migrations.Migration):
                 ('solm_saldo', models.FloatField()),
                 ('solm_total', models.FloatField()),
                 ('solm_estado', models.CharField(max_length=1, blank=True)),
-                ('art', models.ForeignKey(to='aplicacion.Articulossegunda')),
-                ('cli', models.ForeignKey(blank=True, to='aplicacion.Clientes', null=True)),
+                ('art', models.ForeignKey(to='sistema.Articulossegunda')),
+                ('cli', models.ForeignKey(blank=True, to='sistema.Clientes', null=True)),
             ],
             options={
             },
@@ -235,49 +235,49 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='productos',
             name='mar',
-            field=models.ForeignKey(blank=True, to='aplicacion.Categoria', null=True),
+            field=models.ForeignKey(blank=True, to='sistema.Categoria', null=True),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='ordendecompra',
             name='prov',
-            field=models.ForeignKey(to='aplicacion.Proveedor'),
+            field=models.ForeignKey(to='sistema.Proveedor'),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='mantenimiento',
             name='solm',
-            field=models.ForeignKey(to='aplicacion.Solicitudmantenimiento'),
+            field=models.ForeignKey(to='sistema.Solicitudmantenimiento'),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='facturadetallemantenimiento',
             name='solm',
-            field=models.ForeignKey(to='aplicacion.Solicitudmantenimiento'),
+            field=models.ForeignKey(to='sistema.Solicitudmantenimiento'),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='facturadetalle',
             name='pro',
-            field=models.ForeignKey(blank=True, to='aplicacion.Productos', null=True),
+            field=models.ForeignKey(blank=True, to='sistema.Productos', null=True),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='detalleproveedor',
             name='ord',
-            field=models.ForeignKey(blank=True, to='aplicacion.OrdenDeCompra', null=True),
+            field=models.ForeignKey(blank=True, to='sistema.OrdenDeCompra', null=True),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='articulossegunda',
             name='mar',
-            field=models.ForeignKey(blank=True, to='aplicacion.Categoria', null=True),
+            field=models.ForeignKey(blank=True, to='sistema.Categoria', null=True),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='articulossegunda',
             name='mod',
-            field=models.ForeignKey(blank=True, to='aplicacion.Modelo', null=True),
+            field=models.ForeignKey(blank=True, to='sistema.Modelo', null=True),
             preserve_default=True,
         ),
     ]

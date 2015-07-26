@@ -1,5 +1,5 @@
 """
-Django settings for SONYTELELECTRONIC project.
+Django settings for SonytelSistem project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -17,12 +17,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '==4j3$x&halys=a4)p+qs*0=a==h-hgd5&a8+t#2x4sx8f--w8'
+SECRET_KEY = 'ai)!8f!4ha(-mfdhx$td=ch)r#ls-alwygxk45ap#_hg1x)-3$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+
+from unipath import Path 
+RUTA_PROYECTO= Path(__file__).ancestor(2)
 
 ALLOWED_HOSTS = []
 
@@ -36,7 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'aplicacion',
+    'apps.sistema',
+    'bootstrap3',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -49,18 +54,18 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'SONYTELELECTRONIC.urls'
+ROOT_URLCONF = 'SonytelSistem.urls'
 
-WSGI_APPLICATION = 'SONYTELELECTRONIC.wsgi.application'
+WSGI_APPLICATION = 'SonytelSistem.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases SONITELELECTRONICO
-
+# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+#Sonytelproject
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'SONITELELECTRONICO',
+        'NAME': 'Sonytelproject',
         'USER': 'postgres',
         'PASSWORD': 'root',
         'HOST': 'localhost',
@@ -81,8 +86,15 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+#SE ESTABLECE ESTA VARIABLE PARA HACER REFERENCIA A LA CARPETA DONDE SE ALMACENARA TODAS LAS IMAGENES
+MEDIA_ROOT =RUTA_PROYECTO.child('media')
+#SE HACE REFERENCIA AL ALMACEN DE CARPETAS MEDIA
+MEDIA_URL='http://127.0.0.1:8000/media/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS=(
+    RUTA_PROYECTO.child('static')),
+TEMPLATE_DIRS=(
+    RUTA_PROYECTO.child('templates')),

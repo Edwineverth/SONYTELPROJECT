@@ -34,7 +34,8 @@ class Ciudad(models.Model):
    
     ciu_nombre = models.CharField(max_length=30)
     ciu_descripcion = models.CharField(max_length=70)
-
+    def __unicode__(self):
+		return self.ciu_nombre
 
 
 class Clientes(models.Model):
@@ -46,7 +47,8 @@ class Clientes(models.Model):
     cli_email = models.CharField(max_length=75)
     cli_estado = models.CharField(max_length=1)
     ciu = models.ForeignKey(Ciudad, blank=True, null=True)
-    
+    def __unicode__(self):
+		return self.cli_nombre
   
 
 class Detalleproveedor(models.Model):
