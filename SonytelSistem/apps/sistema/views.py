@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Clientes
+from .models import Clientes,Ciudad
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import TemplateView,CreateView,ListView,UpdateView,DeleteView
 from django.http import HttpResponse
@@ -15,18 +15,42 @@ class registrarCliente(CreateView):
 class reporteCliente(TemplateView):
 	template_name='cliente/reportarcliente.html'
 
+class filtrarCliente(TemplateView):
+	template_name='cliente/filtrar.html'
+
+#filtrarAjaxcliente
+class filtrarAjaxcliente(TemplateView):
+	def get(self,request,*args,**kwargs):
+		nombrecliente = request.GET.get('nombre')
+		print nombrecliente
+		model = Ciudad
+		context_object_name = 'ciudad'
+		cliente = Clientes.objects.filter(cli_nombre__contains =nombrecliente)
+		data = serializers.serialize('json',cliente,fields=('cli_nombre','cli_cedula','cli_apellido','cli_direccion','cli_telefono','cli_email','cli_estado','ciu'))
+		print data
+		return HttpResponse(data,content_type='application/json')
+
+
+
+
+
 class listarCliente(ListView):
 	template_name='cliente/reportarcliente.html'
 	context_object_name='clientes'
 	model=Clientes
+#BUSCAR CLINETE 
 class buscarCliente(TemplateView):
-
 	def post(self,request,*args,**Kwargs):
 		buscar = request.POST.get('buscalo')
 		print buscar
 		cliente = Clientes.objects.filter(cli_nombre__contains=buscar)
 		print cliente
 		return render(request,'cliente/buscarcliente.html',{'clientes':cliente,'cliente':True})
+
+
+
+
+
 from django.core import serializers	
 class buscadorAjaxCliente(TemplateView):
 	def get(self,request,*args,**kwargs):

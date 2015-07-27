@@ -17,34 +17,82 @@
     <![endif]-->
 </head>
 <body>
-<nav class="navbar navbar-default navbar-inverse">
-  <div class="container-fluid"> 
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand" href="#">Brand</a> </div>
-    
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topFixedNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      <a class="navbar-brand" href="#">SIGASOFT</a></div>
     <!-- Collect the nav links, forms, and other content for toggling -->
-   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse" id="topFixedNavbar1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">HOME<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">QUIENES SOMOS</a></li>
-        <li><a href="#">SERVICIOS</a></li>
-        <li><a href="#">CLIENTES</a></li>
-        <li><a href="/clientes/buscador">CLIENTESBUSCAR</a></li>
-         <li><a href="/clientes/busqueda">CLIENTESBUSCAR</a></li>
-
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">INVENTARIOS</a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="Historia.html">PRODUCTOS</a></li>
+            <li><a href="Mision.html">ARTICULOS</a></li>
+            <li><a href="Vision.html">PROVEEDORES</a></li>
+            <li><a href="Vision.html">ORDEN COMPRA</a></li>
+            
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">VENTAS</a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="Historia.html">FACTURA</a></li>
+            <li><a href="Mision.html">DETALLES FACTURA</a></li>
+            <li><a href="/cliente/filtrar">CLIENTES</a></li>
+            
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MANTENIMIENTO</a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="Historia.html">SOLICITUD</a></li>
+            <li><a href="Mision.html">REPORTE TECNICO</a></li>
+            <li><a href="Vision.html">FACTURACION</a></li>
+            
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+              
+            
+          </ul>
+        </li>
       </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        BUSCAR
+      </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a> </li>
-        <li><a href="#">Ingresar </a></li>
+        <li><a href="#">Iniciar Sesión</a></li>
+        <li><a href="#">Registrarse</a></li>
+        <li class="dropdown">
+<ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
-    <!-- /.navbar-collapse --> 
+    <!-- /.navbar-collapse -->
   </div>
-  <!-- /.container-fluid --> 
+  <!-- /.container-fluid -->
 </nav>
-
+</br>
+</br>
+</br>
+</br>
 <div class="container">
 <div class="">
         <section class="content">
@@ -56,8 +104,7 @@
       </div><!-- /.content-wrapper -->
   <div class="row"> </div>
 </div>
-</div>
-</div>
+
 <hr>
 <div class="container">
   <div class="row">

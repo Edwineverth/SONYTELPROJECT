@@ -1,0 +1,79 @@
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../../css/bootstrap.css" rel="stylesheet" type="text/css">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+{% extends "base.html" %}
+{% block content %}
+<div class="well">
+		<h1>REPORTE CLIENTE</h1>
+          <div class="btn-toolbar" role="toolbar">
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" onClick=location.href = "/cliente/registrar">INSERTAR</button>
+                <button type="button" class="btn btn-default">ACTUALIZAR</button>
+                <button type="button" class="btn btn-default">ELIMINAR</button>
+                <button type="button" class="btn btn-default">REPORTE</button>
+                <button type="button" class="btn btn-default">IMPRIMIR</button>
+              </div>
+              
+      </div>
+<p>&nbsp;</p>
+<form method="POST" action="/cliente/buscar/">
+  {% csrf_token %}
+  <div class="col-lg-6" >
+			      <div class="input-group">
+			        <input type="text" value="buscar" class="form-control" placeholder="Ingrese el cliente a buscar" name="buscalo">
+			        <span class="input-group-btn">
+			          <button class="btn btn-default" type="submit" >Buscar</button>
+			        </span></div>
+			      <!-- /input-group -->
+			  </div>    	
+	    </form>
+
+	    <!-- /.col-lg-6 -->
+	    </br>
+	    <br/>
+	</div>
+<div id="datos">
+	
+</div>
+
+{% endblock content %}
+
+{% block js %}
+	
+<script>
+		
+	
+		$('input').on('keypress',filtrado);
+		function filtrado(){
+			var nombre = $(this).val();
+			console.log(nombre);
+			$.ajax({
+				data:{'nombre':nombre},
+				url:'/cliente/filtrador/',
+				type: 'get',
+
+				success: function(data){
+					var html = '<div class="table-responsive"><table class="table table-hover"><thead><tr><td class="success">CEDULA</td><td class="success">NOMBRE</td><td class="success">APELLIDO</td><td class="success">TELEFONO</td><td class="success">DIRECCION</td><td class="success">EMAIL</td><td class="success">ESTADO</td><td class="success">CIUDAD</td></tr></thead><tbody >'
+					for(var i = 0; i<data.length ; i++){
+						html += '<tr><td >'+data[i].fields.cli_cedula+'</td><td >'+data[i].fields.cli_nombre+'</td><td >'+data[i].fields.cli_apellido+'</td><td >'+data[i].fields.cli_telefono+'</td><td >'+data[i].fields.cli_direccion+'</td><td >'+data[i].fields.cli_email+'</td><td >'+data[i].fields.cli_estado+'</td><td >'+data[i].fields.ciu+'</td></tr>'
+					}
+					var uni= '</tbody></table></div>'
+					$('#datos').html(html+uni);
+				}
+	
+	
+	
+			});
+	
+		}
+
+	</script>	
+{% endblock js %}
