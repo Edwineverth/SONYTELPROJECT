@@ -15,11 +15,21 @@
 		<h1>REPORTE CLIENTE</h1>
           <div class="btn-toolbar" role="toolbar">
               <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default" onClick=location.href = "/cliente/registrar">INSERTAR</button>
-                <button type="button" class="btn btn-default">ACTUALIZAR</button>
+                <a href="{% url 'registrar_cliente'  %}">
+                <button name="btninsertar" type="button" class="btn btn-default" id="btninsertar">INSERTAR</button>
+                </a>
+                
+                <a href="{% url 'registrar_cliente'  %}">
+				<button type="button" class="btn btn-default">ACTUALIZAR</button>
+                </a>
+                <a href="{% url 'registrar_cliente'  %}">
                 <button type="button" class="btn btn-default">ELIMINAR</button>
+               	</a>
+                <a href="{% url 'registrar_cliente'  %}">
                 <button type="button" class="btn btn-default">REPORTE</button>
+                <a href="{% url 'registrar_cliente'  %}">
                 <button type="button" class="btn btn-default">IMPRIMIR</button>
+              	</a>
               </div>
               
       </div>
