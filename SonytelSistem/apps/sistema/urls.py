@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from .views import index,registrarCliente,listarCliente,buscarCliente,buscadorAjaxCliente,busqueda,editar,eliminar,filtrarCliente,filtrarAjaxcliente
+from .views import index,registrarCliente,listarCliente,editar,eliminar,filtrarCliente,filtrarAjaxcliente
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'SonytelSistem.views.home', name='home'),

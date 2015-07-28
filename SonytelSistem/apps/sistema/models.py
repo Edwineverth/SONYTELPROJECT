@@ -20,6 +20,8 @@ class Articulossegunda(models.Model):
     mar = models.ForeignKey('Categoria', blank=True, null=True)
     mod = models.ForeignKey('Modelo', blank=True, null=True)
     art_estado = models.CharField(max_length=1)
+    def __unicode__(self):
+        return self.art_nombre
 
 
 
@@ -27,6 +29,8 @@ class Articulossegunda(models.Model):
 class Categoria(models.Model):
     mar_nombre = models.CharField(max_length=30)
     mar_descripcion = models.CharField(max_length=75)
+    def __unicode__(self):
+        return self.mar_nombre
 
 
 
@@ -110,6 +114,8 @@ class Modelo(models.Model):
    
     mod_nombre = models.CharField(max_length=30)
     mod_descripcion = models.CharField(max_length=75)
+    def __unicode__(self):
+        return self.mod_nombre
 
  
 
