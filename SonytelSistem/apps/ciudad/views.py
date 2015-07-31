@@ -28,3 +28,16 @@ class eliminarCiudad(DeleteView):
 	context_object_name="ciudades"
 	template_name = 'ciudad/eliminar.html'
 	success_url = reverse_lazy('home')
+
+#FILTRADO DE CIUDAD *****
+class filtrarCiudad(TemplateView):
+	template_name='ciudad/filtrar.html'
+
+
+#RETORNO AJAX FILTRADO *****
+class filtrarAjaxciudad(TemplateView):
+	def get(self,request,*args,**kwargs):
+		nombreciudad = request.GET.get('nombre')
+		ciudad = Ciudad.objects.filter(ciu_nombre__contains =nombreciudad)
+		data = serializers.serialize('json',ciudad,fields=('ciu_nombre','ciu_descripcion'))
+		return HttpResponse(data,content_type='application/json')
