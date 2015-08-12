@@ -1,16 +1,39 @@
 from django.shortcuts import render
 from .models import Clientes,Ciudad
 from django.core.urlresolvers import reverse_lazy
-from django.views.generic import TemplateView,CreateView,ListView,UpdateView,DeleteView
+from django.views.generic import TemplateView,CreateView,ListView,UpdateView,DeleteView,FormView
 from django.http import HttpResponse
 from django.core import serializers	
+from django.contrib.messages.views import SuccessMessageMixin
+import json
+from .forms import TestForm
+class AjaxTemplateMixin(object):
 
+    def dispatch(self, request, *args, **kwargs):
+        if not hasattr(self, 'ajax_template_name'):
+            split = self.template_name.split('.html')
+            split[-1] = '_inner'
+            split.append('.html')
+            self.ajax_template_name = ''.join(split)
+        if request.is_ajax():
+            self.template_name = self.ajax_template_name
+        return super(AjaxTemplateMixin, self).dispatch(request, *args, **kwargs)
+
+class TestFormView(SuccessMessageMixin, AjaxTemplateMixin, FormView):
+    template_name = 'cliente/test_form.html'
+    form_class = TestForm
+    
+    success_url = reverse_lazy('home')
+    success_message = "Way to go!"
+    
+    
 # Create your views here.
 class index(TemplateView):
 	template_name='inicio/index.html'
 #CREAR CLIENTE
 class registrarCliente(CreateView):
-	template_name='cliente/registrarcliente.html'
+	#registrarcliente"
+	template_name='cliente/insertarmodal.html'
 	model=Clientes
 	success_url=reverse_lazy('home')
 #LISTAR CLIENTE
@@ -21,7 +44,7 @@ class listarCliente(ListView):
 #ACTUALIZAR CLIENTE
 class editar(UpdateView):
 	model = Clientes
-	template_name= 'cliente/editar.html'
+	tempalte_name= 'cliente/editar.html'
 	success_url=reverse_lazy('home')
 #ELIMINAR CLIENTE
 class eliminar(DeleteView):

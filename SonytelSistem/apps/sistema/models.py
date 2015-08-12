@@ -67,7 +67,7 @@ class Detalleproveedor(models.Model):
 class Factura(models.Model):
     fac_subtotal = models.FloatField()
     fac_iva = models.FloatField()
-    fac_descuento = models.FloatField()
+    fac_descuento = models.FloatField(verbose_name=u"Ingrese descuento")
     fac_total = models.FloatField()
     fac_fecha = models.DateField()
     fac_estado = models.CharField(max_length=1)
@@ -106,6 +106,8 @@ class Mensajeria(models.Model):
     men_asunto = models.CharField(max_length=30)
     men_descripcion = models.CharField(max_length=500)
     cli = models.ForeignKey(Clientes)
+    def __unicode__(self):
+        return self.men_asunto
 
 
 
@@ -142,6 +144,8 @@ class Productos(models.Model):
     pro_ex = models.IntegerField()
     pro_pvp = models.FloatField()
     mar = models.ForeignKey(Categoria, blank=True, null=True)
+    def __unicode__(self):
+        return self.pro_nombre
 
    
 

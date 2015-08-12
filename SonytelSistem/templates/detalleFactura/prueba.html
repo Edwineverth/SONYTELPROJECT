@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+holaaaaa1
+	{% for cliente in clientes  %}
+	<article>
+		
+		<h3>
+			<a href="{{cliente.cli}}">{{cliente.cli_nombre}}</a>
+		</h3>
+	
+	</article>
+		
+	{% endfor %}
+	{% for cliente in articulos  %}
+	<article>
+		
+		<h3>
+			<a >{{cliente.art_nombre}}</a>
+		</h3>
+	
+	</article>
+		
+	{% endfor %}
+
+{% endblock content %}

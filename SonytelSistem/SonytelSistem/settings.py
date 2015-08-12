@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'crispy_forms',
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,9 +43,11 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'apps.sistema',
     'apps.articulos',
+    'apps.facturadetallle',
     'bootstrap3',
 
 )
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -99,3 +103,8 @@ STATICFILES_DIRS=(
     RUTA_PROYECTO.child('static')),
 TEMPLATE_DIRS=(
     RUTA_PROYECTO.child('templates')),
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+
+TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    'django.core.context_processors.request',
+)
