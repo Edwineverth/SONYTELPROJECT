@@ -69,7 +69,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('fac_subtotal', models.FloatField()),
                 ('fac_iva', models.FloatField()),
-                ('fac_descuento', models.FloatField()),
+                ('fac_descuento', models.FloatField(verbose_name='Ingrese descuento')),
                 ('fac_total', models.FloatField()),
                 ('fac_fecha', models.DateField()),
                 ('fac_estado', models.CharField(max_length=1)),

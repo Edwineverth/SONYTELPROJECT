@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+        <legend>Proveedores</legend>
+    <div class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-6">
+        <form action="/buscarProveedores/" method="POST">{% csrf_token %}
+            <div class="input-group">
+                <input class="form-control" type="search" name="buscar" placeholder="Buscar" required/>
+                <span class="input-group-btn"><button class="btn btn-primary" type="submit" value="Buscar"><i class="icon-search"></i></button></span>
+            </div>
+        </form>
+        </div>
+     <div class="col-xs-3"></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="table-responsive">
+    <table class="table table-bordered">
+        <tr>
+            <th>RUC</th>
+            <th>Razon Social</th>
+            <th>Direccion</th>
+            <th>Ciudad</th>
+            <th>Telefono</th>
+            <th>Correo Electronico</th>
+        </tr>
+        {% for proveedores in entrada %}
+        <tr>
+            <td>{{ proveedores.RUC }}</td>
+            <td>{{ proveedores.Razon_Social }}</td>
+            <td>{{ proveedores.Direccion }}</td>
+            <td>{{ proveedores.Ciudad }}</td>
+            <td>{{ proveedores.Telefono }}</td>
+            <td>{{ proveedores.Correo_Electronico }}</td>
+            <td><a href="#Formulario{{ proveedores.RUC }}" class="btn btn-primary" data-toggle="modal" title="Actualizar {{ proveedores.Razon_Social }}"><i class="icon-refresh"></i></a></td>
+            <td><a href="#Formulario1{{ proveedores.RUC }}" class="btn btn-danger " data-toggle="modal" title="Eliminar{{ proveedores.Razon_Social }}"><i class="icon-remove"></i></a></td>
+        </tr>
+            {%empty%}
+                            <tr>
+                                <td colspan="8">
+                                    No se encontro ningun registro
+                                </td>
+                            </tr>
+        {% endfor %}
+    </table>
+    </div>
+    </div>
+
+<div class="pagination">
+        <ul>
+                {% if entrada.has_previous %}
+            <li class="previous">
+                <a href="?page={{ entrada.previous_page_number }}" class="fui-arrow-left"></a>
+            </li>
+                {% endif %}
+            <li class="active"><a href="#">{{ entrada.number}}</a>
+            </li>
+                {% if entrada.has_next %}
+             <li class="next">
+                <a href="?page={{ entrada.next_page_number }}" class="fui-arrow-right"></a></li>
+            </li>
+                {% endif %}
+        </ul>
+</div>
+
+
+
+
+{% for proveedores in entrada %}
+    <div id="Formulario{{ proveedores.RUC }}" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Editar Proveedores<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h5>
+                </div>
+                <form action="/listaProveedores/" method="post" id="formulario" name="formulario"> {% csrf_token %}
+            <div class="row">
+                <div class="col-xs-2"></div>
+                    <div class="col-xs-7">
+                        <legend>Proveedores</legend>
+                        <div class="row-fluid">
+                             <div class="col-xs-6">
+                                <label for="RUC">Ruc:</label>
+                                <input type="text" class="form-control" name="RUC" id="RUC" value="{{ proveedores.RUC }}" readonly>
+                                <label for="Razon_Social">Razon Social:</label>
+                                <input type="text" class="form-control" name="Razon_Social" id="Razon_Social" value="{{ proveedores.Razon_Social }}">
+                                <label for="direccion">Direccion:</label>
+                                <input type="text" class="form-control" name="direccion" id="direccion" value="{{ proveedores.Direccion }}">
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="row-fluid">
+                                    <label for="ciudad">Ciudad:</label>
+                                    <input type="text" class="form-control" name="ciudad" id="ciudad" value="{{ proveedores.Ciudad }}">
+                                    <label for="Telefono">Telefono:</label>
+                                    <input type="text" class="form-control" name="telefono" id="telefono" value="{{ proveedores.Telefono }}">
+                                    <label for="Correo_electronico">Correo:</label>
+                                    <input type="text" class="form-control" name="Correo_electronico" id="Correo_electronico" value="{{ proveedores.Correo_Electronico }}">
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                    </div>
+            </div>
+                 <div class="modal-footer">
+                    <button class="btn btn-primary" id="guardar" type="submit" title="Guardar"><i class="icon-save text-small"></i></button>
+                 </div>
+                </form>
+           </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% for proveedores in entrada %}
+    <div id="Formulario1{{ proveedores.RUC }}" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Eliminar Proveedor<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h5>
+                </div>
+                <form action="/eliminarProveedor/" method="post">{% csrf_token %}
+                    <div class="modal-body">
+                        Desea eliminar a {{proveedores.Razon_Social}}?
+                        <div style="display: none"><input type="text" name="eliminarRUC" value="{{proveedores.RUC}}"/></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit"  class="btn btn-danger"> Si </button>
+                        <button type="submit" data-dismiss="modal" class="btn btn-default"> No </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+     <script type="text/javascript">
+        msj="{{ msj }}"
+        if(msj.length>0)
+            alert(msj)
+    </script>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "conf/plantillaConf.html" %}
+
+{% block contenidoPlantilla %}
+
+    <div class="row">
+        <legend>Clientes</legend>
+        <div class="row">
+            <div class="table-responsive">
+        <table class="table table-bordered">
+            <tr>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th></th>
+            </tr>
+            {% for cliente in entrada %}
+            <tr>
+                <td>{{ cliente.Cedula }}</td>
+                <td>{{ cliente.Nombre }} {{ cliente.Apellido }}</td>
+                <td><a href="#Formulario{{ cliente.Cedula }}" class="btn btn-primary" data-toggle="modal"><i class="icon-refresh"></i></a></td>
+            </tr>
+                {%empty%}
+                                <tr>
+                                    <td colspan="4">
+                                        No se encontro ningun registro
+                                    </td>
+                                </tr>
+            {% endfor %}
+        </table>
+        </div>
+        </div>
+
+    <div class="pagination">
+            <ul>
+                    {% if entrada.has_previous %}
+                <li class="previous">
+                    <a href="?page={{ entrada.previous_page_number }}" class="fui-arrow-left"></a>
+                </li>
+                    {% endif %}
+                <li class="active"><a href="#">{{ entrada.number}}</a>
+                </li>
+                    {% if entrada.has_next %}
+                 <li class="next">
+                    <a href="?page={{ entrada.next_page_number }}" class="fui-arrow-right"></a></li>
+                </li>
+                    {% endif %}
+            </ul>
+    </div>
+    </div>
+
+
+    {% for cliente in entrada %}
+    <div id="Formulario{{ cliente.Cedula}}" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Habilitar Cliente<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h5>
+                </div>
+                <form action="/confClientes/" method="post">{% csrf_token %}
+                    <div class="modal-body">
+                        Desea Habilitar a {{cliente.Nombre}} {{ cliente.Apellido }}?
+                        <div style="display: none"><input type="text" name="habilitar" value="{{cliente.Cedula}}"/></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit"  class="btn btn-danger"> Si </button>
+                        <button type="submit" data-dismiss="modal" class="btn btn-default"> No </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+    <legend>Usuarios</legend>
+    <div class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-6">
+        <form action="/buscarUsuarios/" method="post">{% csrf_token %}
+            <div class="input-group">
+                <input class="form-control" type="search" name="buscar" placeholder="Buscar" required/>
+                <span class="input-group-btn"><button class="btn btn-primary" type="submit" value="Buscar"><i class="icon-search"></i></button></span>
+            </div>
+        </form>
+            <br/>
+        </div>
+        <div class="col-xs-3"></div>
+    </div>
+    <div class="row">
+        <div class="table-responsive">
+    <table class="table table-bordered">
+        <tr>
+            <th>Cedula</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Direccion</th>
+            <th>Ciudad</th>
+            <th>Cargo</th>
+            <th>Telefono</th>
+            <th>Sexo</th>
+            <td></td>
+            <td></td>
+        </tr>
+        {% for usuario in entrada%}
+        <tr>
+            <td>{{ usuario.Cedula}}</td>
+            <td>{{ usuario.Nombre}}</td>
+            <td>{{ usuario.Apellido}}</td>
+            <td>{{ usuario.Direccion}}</td>
+            <td>{{ usuario.Ciudad}}</td>
+            <td>{{ usuario.Cargo}}</td>
+            <td>{{ usuario.Telefono}}</td>
+            <td>{{ usuario.Sexo}}</td>
+            <td><a href="#Formulario{{ usuario.Cedula}}" class="btn btn-primary" data-toggle="modal" title="Actualizar {{usuario.Nombre}}"><i class="icon-refresh"></i></a></td>
+            <td><a href="#Formulario1{{ usuario.Cedula}}" class="btn btn-danger " data-toggle="modal" title="Eliminar{{usuario.Nombre}}"><i class="icon-remove"></i></a></td>
+
+        </tr>
+            {%empty%}
+                            <tr>
+                                <td colspan="10">
+                                    No se encontro ningun registro
+                                </td>
+                            </tr>
+        {% endfor %}
+    </table>
+    </div>
+    </div>
+
+
+    <div class="pagination">
+        <ul>
+                {% if entrada.has_previous %}
+            <li class="previous">
+                <a href="?page={{ entrada.previous_page_number }}" class="fui-arrow-left"></a>
+            </li>
+                {% endif %}
+            <li class="active"><a href="#">{{ entrada.number}}</a>
+            </li>
+                {% if entrada.has_next %}
+             <li class="next">
+                <a href="?page={{ entrada.next_page_number }}" class="fui-arrow-right"></a></li>
+            </li>
+                {% endif %}
+        </ul>
+    </div>
+
+    {% for usuario in entrada %}
+    <div id="Formulario{{ usuario.Cedula }}" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Editar Usuarios<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h5>
+                </div>
+                <form action="/listaUsuarios/" method="post">{% csrf_token %}
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label >Cedula:</label>
+                                <input type="text" class="form-control" name="cedula" value="{{ usuario.Cedula }}" readonly/>
+                                <label >Nombre:</label>
+                                <input type="text" class="form-control" name="nombre" value="{{ usuario.Nombre }}"/>
+                                <label >Apellido:</label>
+                                <input type="text" class="form-control" name="apellido" value="{{ usuario.Apellido }}"/>
+                                <label >Direccion:</label>
+                                <input type="text" class="form-control" name="direccion" value="{{ usuario.Direccion }}"/>
+
+                            </div>
+                            <div class="col-xs-6">
+                                <label >Ciudad:</label>
+                                <input type="text" class="form-control" name="ciudad" value="{{ usuario.Ciudad }}"/>
+                                <label >Cargo:</label>
+                                 <select name="info" id="cargo" class="mbn">
+                                 {% if usuario.Cargo == "Administrador" %}
+                                        <optgroup label="">
+                                          <option value="Administrador">Administrador</option>
+                                          <option value="Usuario">Usuario</option>
+                                        </optgroup>
+                                 {% else %}
+                                     <optgroup label="">
+                                         <option value="Usuario">Usuario</option>
+                                         <option value="Administrador">Administrador</option>
+                                     </optgroup>
+                                 {% endif %}
+                                 </select>
+                                <label >Telefono:</label>
+                                <input type="text" class="form-control" name="telefono" value="{{ usuario.Telefono}}"/>
+                                <div style="display: none"><input type="text" name="dj" value="{{ usuario.usuarioDJ_id }}"/></div>
+
+                            {% if usuario.Sexo == "masculino"%}
+                                Sexo:<br>
+                                <div class="col-xs-3">
+                                <label class="radio" title="Femenino">
+                                    <input type="radio" name="sexo" value="femenino" data-toggle="radio">
+                                    <i class="icon-female"></i>
+                                </label>
+                                    </div>
+                                <div class="col-xs-3">
+                                <label class="radio" title="Masculino">
+                                    <input type="radio" name="sexo" value="masculino" data-toggle="radio" checked>
+                                    <i class="icon-male"></i>
+                                </label>
+                                </div>
+                            {% else %}
+                                Sexo:<br>
+                                <div class="col-xs-3">
+                                <label class="radio" title="Femenino">
+                                    <input type="radio" name="sexo" value="femenino" data-toggle="radio" checked>
+                                    <i class="icon-female"></i>
+                                </label>
+                                    </div>
+                                <div class="col-xs-3">
+                                <label class="radio" title="Masculino">
+                                    <input type="radio" name="sexo" value="masculino" data-toggle="radio">
+                                    <i class="icon-male"></i>
+                                </label>
+                                </div>
+                            {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary"><i class="icon-save"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% for usuario in entrada %}
+    <div id="Formulario1{{ usuario.Cedula }}" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Eliminar Usuarios<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h5>
+                </div>
+                <form action="/eliminarUsuario/" method="post">{% csrf_token %}
+                    <div class="modal-body">
+                        Desea eliminar a {{usuario.Nombre}}?
+                        <div style="display: none"><input type="text" name="eliminarCed" value="{{usuario.Cedula}}"/></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit"  class="btn btn-danger"> Si </button>
+                        <button type="submit" data-dismiss="modal" class="btn btn-default"> No </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        msj="{{ msj }}"
+        if(msj.length>0)
+            alert(msj)
+    </script>
+    {% endfor %}
+{% endblock %}

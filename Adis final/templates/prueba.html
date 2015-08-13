@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>probando</title>
+    <link rel="stylesheet" href="../static/Flat-UI/bootstrap/css/bootstrap.css" type="text/css"/>
+    <meta name="viewport"   content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../static/font-awesome/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css" type="text/css"/>-->
+    <link rel="stylesheet" href="../static/css/stilo.css" type="text/css"/>
+    <link href="../static/Flat-UI/css/flat-ui.css" rel="stylesheet">
+
+     <!--importar JS-->
+    <script src="../static/js/jquery-1.11.1.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+
+    <script src="../static/Flat-UI/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="../static/Flat-UI/js/bootstrap.min.js"></script>
+    <script src="../static/Flat-UI/js/bootstrap-select.js"></script>
+    <script src="../static/Flat-UI/js/bootstrap-switch.js"></script>
+    <script src="../static/Flat-UI/js/flatui-checkbox.js"></script>
+    <script src="../static/Flat-UI/js/flatui-radio.js"></script>
+    <script src="../static/Flat-UI/js/jquery.tagsinput.js"></script>
+    <script src="../static/Flat-UI/js/jquery.placeholder.js"></script>
+    <script src="../static/Flat-UI/js/typeahead.js"></script>
+    <script src="../static/Flat-UI/bootstrap/js/google-code-prettify/prettify.js"></script>
+    <script src="../static/Flat-UI/js/application.js"></script>
+
+
+
+</head>
+<body>
+
+    <div class="container">
+        <nav id="myNavbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><i class="icon-home text-medium"></i> </a>
+            </div>
+
+            <div class="collapse navbar-collapse pull-right" id="navbarCollapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#" title="Mision"><i class="icon-bookmark text-medium"></i> </a></li>
+                    <li><a href="#" title="Vision"><i class="icon-eye-open text-medium"></i> </a></li>
+                    <li><a href="#" title="Contacto"><i class="icon-phone text-medium"></i> </a></li>
+                    <li><a href="#" class="btn" data-toggle="modal" title="Iniciar Sesion"><i class="icon-signin text-medium"></i> </a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Modal HTML -->
+    <div id="sesion" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Inicio Sesion<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h4>
+
+                </div>
+                <form action="#">
+                    <div class="modal-body">
+                        <div class="form-group">
+                                <label class="sr-only" for="inputEmail">Email</label>
+                                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="inputPassword">Password</label>
+                                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                            </div>
+
+                                <label class="checkbox" for="checkbox1">
+                                    <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox">
+                                    Remenber Me
+                                </label>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+   <div class="container">
+       <input type="search" class="typeahead" >
+        <p id="Home">
+            <h2 style="text-align: center">Bienvenidos a <br/>Bazar & Libreria "Israel"</h2>
+        <br/><br/>
+            <p style="text-align: center"><i class="icon-book text-big"></i></p>
+        <br/><br/><br/>
+            <p style="text-align: justify">Bazar y Papelería “Israel” una empresa ecuatoriana con 10 años de experiencia en el mercado papelero, ofreciendo a nuestros clientes la mejor selección en marcas y  productos.  Nuestra especialidad es brindar lo mejor en papelería, suministros de oficina y útiles escolares, para  oficinas, colegios, papelerías  y empresas con el mejor surtido.
+            Nuestros clientes nos prefieren por la excelente calidad de los productos, precios competitivos y el servicio personalizado.</p>
+
+        </p>
+
+   </div>
+
+
+
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <marquee>
+            Bazar & Libreria "Israel" - Santa Rosa - El Oro - Ecuador 2014
+        </marquee>
+    </div>
+
+
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            alert("entro")
+            var nombre = [];
+            var c=0;
+            {% for prod in listaProductos %}
+                   nombre[c]='{{ prod.Nombre }}';
+                    c=c+1;
+                 {% endfor %}
+            $(".btn").click(function(){
+                $("#sesion").modal('show');
+            });
+
+            $("a").tooltip({placement: "bottom"});
+
+            $('input.typeahead').typeahead({
+
+
+
+                local: nombre
+            });
+
+        });
+
+    </script>
+
+
+</body>
+</html>

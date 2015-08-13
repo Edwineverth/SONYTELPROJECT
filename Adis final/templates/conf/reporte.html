@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+    <div class="row">
+        <legend>Control de Inicio de Sesion</legend>
+
+            <div class="row">
+            <div class="col-xs-3"></div>
+            <div class="col-xs-6">
+            <form action="/reporte/" method="post">{% csrf_token %}
+                <div class="input-group">
+                    <input class="form-control" type="search" name="buscar" placeholder="Buscar"/>
+                    <span class="input-group-btn"><button class="btn btn-primary" type="submit" value="Buscar"><i class="icon-search"></i></button></span>
+                </div>
+            </form>
+                <br/>
+            </div>
+            <div class="col-xs-3"><button class="btn btn-primary" onclick="print()"><i class="icon-print"></i></button></div>
+        </div>
+        <div class="row">
+            <div class="table-responsive">
+            <table class="table table-bordered">
+            <tr>
+                <th>Cedula</th>
+                <th>Nombres</th>
+                <th>Cargo</th>
+                <th>Fecha</th>
+            </tr>
+            {% for usuario in entrada %}
+            <tr>
+                <td>{{ usuario.Usuar.Cedula }}</td>
+                <td>{{ usuario.Usuar.Nombre }} {{ usuario.Usuar.Apellido }}</td>
+                <td>{{ usuario.Usuar.Cargo }}</td>
+                <td>{{ usuario.Hora_entrada }}</td>
+            </tr>
+                {%empty%}
+                                <tr>
+                                    <td colspan="4">
+                                        No se encontro ningun registro
+                                    </td>
+                                </tr>
+            {% endfor %}
+        </table>
+        </div>
+        </div>
+
+    </div>
+{% endblock %}

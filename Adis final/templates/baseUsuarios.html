@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="../static/Flat-UI/bootstrap/css/bootstrap.css" type="text/css"/>
+    <!--<meta name="viewport"   content="width=device-width, initial-scale=1.0">-->
+	<link rel="stylesheet" href="../static/font-awesome/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css" type="text/css"/>-->
+    <link rel="stylesheet" href="../static/css/stilo.css" type="text/css"/>
+    <link href="../static/Flat-UI/css/flat-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/jquery.dataTables.css"/>
+
+
+    <script src="../static/js/jquery-1.11.1.min.js"></script>
+    <script src="../static/js/jquery.dataTables.js"></script>
+    <script src="../static/js/jquery.dataTables.min.js"></script>
+     <script src="../static/Flat-UI/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="../static/Flat-UI/js/bootstrap.min.js"></script>
+    <script src="../static/Flat-UI/js/bootstrap-select.js"></script>
+    <script src="../static/Flat-UI/js/bootstrap-switch.js"></script>
+    <script src="../static/Flat-UI/js/flatui-checkbox.js"></script>
+    <script src="../static/Flat-UI/js/flatui-radio.js"></script>
+    <script src="../static/Flat-UI/js/jquery.placeholder.js"></script>
+    <script src="../static/Flat-UI/js/application.js"></script>
+    {% block cabecera %}
+
+    {% endblock %}
+
+
+
+
+</head>
+
+<body>
+    <div class="container">
+       <nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/inicioUser"><i class="icon-home text-medium"></i></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="nav navbar-nav pull-right">
+                   <li class="dropdown"><a href="#" class="dropdown-toggle" title="Registros" data-toggle="dropdown"> <i class="icon-edit text-medium"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/clientes">Gestionar Cliente</a></li>
+                            <li><a href="/listaClientes">Listado de Clientes</a></li>
+                            <!--<li><a href="#">Gestionar Proveedor</a></li>
+                            <li><a href="#">Listado de Proveedores</a></li>
+                            <li><a href="/usuarios">Gestionar Usuario</a></li>
+                            <li><a href="/listaUsuarios">Listado de Usuarios</a></li>-->
+                        </ul>
+                    </li>
+
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Facturacion"><i class="icon-dollar text-medium" ></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/generarFacturaVenta">Generar Factura de Venta</a></li>
+                            <li><a href="#">Listado de Facturas de Ventas</a></li>
+                            <!--<li><a href="#">Generar Factura de Compra</a></li>
+                            <li><a href="#">Listado de Facturas de Compras</a></li>-->
+                        </ul>
+                    </li>
+
+                    <li><a href="/productos" title="Inventario"><i class="icon-table text-medium"></i> </a></li>
+
+                    <li><a href="#" class="dropdown-toggle" title="Comprobantes" data-toggle="dropdown"><i class="icon-book text-medium"></i></a>
+                         <ul class="dropdown-menu">
+                            <li><a href="#">Cuentas por Cobrar</a></li>
+							<li><a href="#">Comprobantes de Cuentas por Cobrar</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li><a href="#" class="dropdown-toggle" title="Ayuda" data-toggle="dropdown"><i class="icon-question text-medium"></i> </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Acerca de...</a></li>
+                            <li><a href="#">Tutorial</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#" class="dropdown-toggle" title="Salir" data-toggle="dropdown"><i class="icon-signout text-medium"></i> </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Editar Mis Datos</a></li>
+
+                            <li><form action="/cerrar/" method="post">{% csrf_token %}<button type="submit" class="btn btn-link">Cerrar Sesion</button></form></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+
+
+    <!--importar JS-->
+
+
+
+
+   <section>
+       <div class="container">
+           {% block contenido %}
+
+               <h1>Bienvenido {{ usuario.Nombre }} {{ usuario.Apellido }}</h1>
+               <br/>
+
+
+           {% endblock %}
+       </div>
+   </section>
+
+
+
+</body>
+</html>

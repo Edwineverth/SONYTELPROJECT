@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <div class="container">
+        <br/>
+
+    <div class="row">
+        <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>Nro. Cta x Pagar</th><td>CCxPP-{{ datos.Numero }}</td>
+                <th>Concepto</th><td colspan="4">{{ datos.Concepto }}</td>
+                <th>Acreedor</th><td colspan="4">{{ proveedor.Razon_Social }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Fecha de Inicio</th><td>{{ datos.Fecha_Inicio }}</td>
+                <td></td>
+                <th colspan="3">Valor Total</th>
+                <th colspan="3">Saldo</th>
+                <th colspan="3">Valor Cancelado</th>
+
+            </tr>
+
+            <tr>
+                 <th>Fecha Vencimiento</th><td>{{ datos.Fecha_Vencimiento }}</td>
+                  <td></td>
+                    <td colspan="3">{{ datos.Valor_Total }}</td>
+                    <td colspan="3">{{ datos.Valor_Saldo }}</td>
+                    <td colspan="3">{{ datos.Valor_Cancelado }}</td>
+            </tr>
+             <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        </div>
+        </div>
+        <div class="row">
+            {% if datos.Valor_Saldo != 0 %}
+                <a href="#Ingreso" class="btn btn-primary" data-toggle="modal" title="Abonar"><i class="icon-dollar"></i></a>
+            {% else %}
+                <h6 style="text-align: center" class="alert-success">Cuenta Saldada!</h6>
+            {% endif %}
+
+        </div>
+
+        <div class="row">
+            <br/>
+            Lista de Comprobantes de Cuentas por Pagar
+            <br/>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Nro. Comprobante</th>
+                        <th>Fecha de Pago</th>
+                        <th>Concepto</th>
+                        <th>Valor Cancelado</th>
+                        <th>Saldo</th>
+                        <th>Nro. Cta x Pagar</th>
+                    </tr>
+                    {% for lista in comprobantes %}
+                        <tr>
+                            <td>{{ lista.Numero }}</td>
+                            <td>{{ lista.Fecha_Pago }}</td>
+                            <td>{{ lista.Concepto }}</td>
+                            <td>{{ lista.Valor_Cancelar }}</td>
+                            <td>{{ lista.Saldo }}</td>
+                            <td>{{ lista.CCxPP_id }}</td>
+                        </tr>
+
+                        </tr>
+                        {%empty%}
+                                <tr>
+                                    <td colspan="10">
+                                        No se encontro ningun registro
+                                    </td>
+                                </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-xs-1"><a href="/ctpPagar" class="btn btn-primary" title="Volver"><i class="icon-arrow-left"></i></a></div>
+            <div class="col-xs-1"><button class="btn btn-primary" onclick="print()"><i class="icon-print"></i></button></div>
+        </div>
+    </div>
+
+
+
+
+    <!--Modal Ingreso-->
+    <div id="Ingreso" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Comprobante Cuenta por Pagar<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h5>
+                </div>
+                <form action="" method="post">{% csrf_token %}
+                    <div class="modal-body">
+                        <label for="numero">Comprobante</label><input class="form-control" type="text" readonly required name="numero" id="numero" value="{{ num }}"/>
+                        <!--<label for="Fecha">Fecha Pago</label><input class="form-control" type="text" readonly required id="Fecha"/>-->
+                        <label for="concepto">Concepto</label><input class="form-control" type="text" required id="concepto" name="concepto" value="{{ datos.Concepto }}"/>
+                        <label for="valor">Valor a Cancelar</label><input class="form-control" type="text" required id="valor" name="valor"/>
+                        <label for="saldo">Saldo</label><input class="form-control" type="text" required id="saldo" name="saldo" value="{{ datos.Valor_Saldo }}"/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary"><i class="icon-save"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $.("#valor").keyup(function(){
+            var saldo= parseFloat(document.getElementById("saldo").value)-parseFloat(document.getElementById("valor").value)
+            document.getElementById("saldo").value=saldo
+        })
+    </script>
+{% endblock %}

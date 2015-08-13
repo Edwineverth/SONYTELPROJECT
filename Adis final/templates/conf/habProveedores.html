@@ -1,0 +1,73 @@
+{% extends "conf/plantillaConf.html" %}
+
+{% block contenidoPlantilla %}
+
+    <div class="row">
+        <legend>Proveedores</legend>
+        <div class="row">
+            <div class="table-responsive">
+        <table class="table table-bordered">
+            <tr>
+                <th>RUC</th>
+                <th>Razon Social</th>
+                <th></th>
+            </tr>
+            {% for proveedores in entrada %}
+            <tr>
+                <td>{{ proveedores.RUC }}</td>
+                <td>{{ proveedores.Razon_Social }}</td>
+                <td><a href="#Formulario{{ proveedores.RUC }}" class="btn btn-primary" data-toggle="modal" title="Actualizar {{ proveedores.Razon_Social }}"><i class="icon-refresh"></i></a></td>
+            </tr>
+                {%empty%}
+                                <tr>
+                                    <td colspan="4">
+                                        No se encontro ningun registro
+                                    </td>
+                                </tr>
+            {% endfor %}
+        </table>
+        </div>
+        </div>
+
+    <div class="pagination">
+            <ul>
+                    {% if entrada.has_previous %}
+                <li class="previous">
+                    <a href="?page={{ entrada.previous_page_number }}" class="fui-arrow-left"></a>
+                </li>
+                    {% endif %}
+                <li class="active"><a href="#">{{ entrada.number}}</a>
+                </li>
+                    {% if entrada.has_next %}
+                 <li class="next">
+                    <a href="?page={{ entrada.next_page_number }}" class="fui-arrow-right"></a></li>
+                </li>
+                    {% endif %}
+            </ul>
+    </div>
+    </div>
+
+
+    {% for proveedores in entrada %}
+    <div id="Formulario{{ proveedores.RUC }}" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Habilitar Proveedor<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h5>
+                </div>
+                <form action="/confProveedores/" method="post">{% csrf_token %}
+                    <div class="modal-body">
+                        Desea Habilitar a {{proveedores.Razon_Social}}?
+                        <div style="display: none"><input type="text" name="habilitarRUC" value="{{proveedores.RUC}}"/></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit"  class="btn btn-danger"> Si </button>
+                        <button type="submit" data-dismiss="modal" class="btn btn-default"> No </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}

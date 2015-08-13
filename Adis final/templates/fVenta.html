@@ -1,0 +1,300 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+    <div class="container well">
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="row">
+                    <div class="col-xs-12 panel-primary">
+                        <div class="panel-heading">Datos Clientes</div>
+                            <div class="panel-body">
+                                <div class="col-xs-6">
+                                <label for="cedula">Cedula:</label>
+                                <div class="input-group">
+                                    <input class="form-control" type="search" name="cedula" id="cedula" required autocomplete="off" placeholder="Cedula"/>
+                                    <span class="input-group-btn"><button class="btn btn-primary" type="button" value="Buscar" onclick="javascript:buscar()"><i class="icon-search"></i></button></span>
+                                </div>
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+                                <label for="apellido">Apellido:</label>
+                                <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido">
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="row-fluid">
+                                    <label for="direccion">Direccion:</label>
+                                    <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Direccion">
+                                    <label for="ciudad">Ciudad:</label>
+                                    <input type="text" class="form-control" name="ciudad" id="ciudad" placeholder="Ciudad">
+                                    <label for="tlfono">Telefono:</label>
+                                    <input type="text" class="form-control" name="tlfono" id="tlfono" placeholder="Telefono">
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 panel-primary">
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-6 panel-primary">
+                <div class="panel-heading">Datos Factura</div>
+                <div class="panel-body">
+                    <div class="col-xs-6">
+                        <label for="NFactura">Numero de Factura</label>
+                        <input type="datetime" class="form-control" name="NFactura" id="NFactura" required value="{{ nFactura }}"/>
+                    </div>
+                    <div class="col-xs-6">
+                        <label for="fecha">Fecha</label>
+                        <input type="datetime" class="form-control" name="fecha" id="fecha"/>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    <div class="row">
+        <div class="panel-primary">
+            <div class="panel-heading">Productos</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-2"></div>
+                    <div class="col-xs-4">
+                        <div class="form-group">
+                            <input class="form-control typeahead" type="text" id="buscarProd" placeholder="Buscar Producto" autocomplete="off"/>
+                        </div>
+
+                    </div>
+                    <div class="col-xs-3">
+                        <input class="form-control" type="text" name="cantidad" id="cantidad" placeholder="Cantidad" autocomplete="off"/>
+                    </div>
+                    <div class="col-xs-2">
+                        <button class="btn btn-primary" type="button" onclick="addfilas()"><i class="icon-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+         <div class="col-xs-12">
+             <div class="col-xs-2"></div>
+             <div class="col-xs-8">
+                 <table id="factura" class="table-bordered">
+                <th>&nbsp Codigo &nbsp </th>
+                <th>&nbsp Descripcion &nbsp &nbsp &nbsp &nbsp  </th>
+                <th>Cantidad</th>
+                <th>&nbsp Precio Unitario &nbsp </th>
+                <th>&nbsp Prectio Total &nbsp</th>
+                    <th>&nbsp  &nbsp</th>
+                </table>
+             </div>
+             <div class="col-xs-2"></div>
+        </div>
+    </div>
+        <br/>
+    <div class="row">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-3">
+           <div class="row">
+                Estado:<br>
+                <div class="col-xs-4">
+                <select name="info" id="estado" class="mbn">
+                    <optgroup label="">
+                      <option value="Cancelada">Cancelada</option>
+                      <option value="Emitida">Emitida</option>
+                    </optgroup>
+
+                  </select>
+                </div>
+           </div>
+            <br/>
+            <div class="row">
+                <label for="cancelado">Valor a pagar:</label><input class="form-control" type="text" value="0" id="cancelado"/>
+            </div>
+        </div>
+        <div class="col-xs-1"></div>
+        <div class="col-xs-1">
+            <label for="subtotal">Subtotal</label>
+            <label for="IVA">I. V. A.</label>
+            <label for="dscto">Descuento</label>
+            <label for="Total">Total</label>
+        </div>
+        <div class="col-xs-2">
+            <input class="form-control" type="text" id="Subtotal" value="0"/>
+            <input class="form-control" type="text" id="IVA" value="0"/>
+            <input class="form-control" type="text" id="dscto" value="0"/>
+            <input class="form-control" type="text" id="Total" value="0"/>
+        </div>
+    </div>
+        <br/>
+    <div class="row">
+        <div class="col-xs-5"></div>
+        <div class="col-xs-2"><button class="btn btn-primary" title="Guardar" id="guardar"><i class="icon-save"></i></button></div>
+        <div class="col-xs-5"></div>
+
+    </div>
+
+    </div>
+
+    <script>
+
+        var nombre = [];
+            var c=0;
+            {% for prod in listaProductos %}
+                   nombre[c]='{{ prod.Nombre }}';
+                    c=c+1;
+                 {% endfor %}
+
+
+
+        $('input.typeahead').typeahead({
+                local: nombre
+            });
+
+        var f = new Date();
+        document.getElementById('fecha').value=(f.getFullYear() + "-" + (f.getMonth() +1) + "-" + f.getDate());
+        var fecha = (f.getFullYear() + "-" + (f.getMonth() +2) + "-" + f.getDate());
+
+        $("#guardar").click(function(){
+        var tabla = document.getElementById('factura');
+        if (tabla.rows.length > 1){
+            for (var i=1; tabla.rows[i];i++)
+            {
+                    $.get('/guardarFacturaVenta/',
+                            {codigo:document.getElementById("factura").rows[i].cells[0].innerHTML,
+                                cantidad:document.getElementById("factura").rows[i].cells[2].innerHTML,
+                                precio:document.getElementById("factura").rows[i].cells[3].innerHTML,
+                                ci:document.getElementById("cedula").value,
+                                nFact:document.getElementById('NFactura').value,
+                                i:i,
+                                subtotal:document.getElementById('Subtotal').value,
+                                iva:document.getElementById('IVA').value,
+                                dscto:document.getElementById('dscto').value,
+                                total:document.getElementById('Total').value,
+                                estado:document.getElementById('estado').value,
+                                cancelado:document.getElementById('cancelado').value,
+                                fecha:fecha
+                            });
+
+
+            }
+
+            alert("Datos Guardados Correctamente... ")
+
+            setTimeout("location.href='/generarFacturaVenta'",2000);
+        }
+        else
+        {
+            alert ( "no hay valores!!" );
+        }
+    });
+
+        //metodos
+        function buscar(){
+                    var cedulaBuscar = document.getElementById("cedula").value;
+
+                    {% for Cliente in listaClientes %}
+
+                        if("{{ Cliente.Cedula }}"==cedulaBuscar){
+
+                            var nombre = "{{ Cliente.Nombre }}"
+                            var apellido = "{{ Cliente.Apellido }}"
+                            var direccion = "{{ Cliente.Direccion }}"
+                            var telefono = "{{ Cliente.Telefono }}"
+                            var ciudad = "{{ Cliente.Ciudad }}"
+
+
+                            document.getElementById("nombre").value=nombre;
+                            document.getElementById("apellido").value=apellido;
+                            document.getElementById("direccion").value=direccion;
+                            document.getElementById("tlfono").value=telefono;
+                            document.getElementById("ciudad").value=ciudad;
+
+                        }
+                    {% endfor %}
+
+        }
+
+
+            function eliminar(t){
+                var td = t.parentNode;
+                var tr = td.parentNode;
+                var table = tr.parentNode;
+                table.removeChild(tr);
+                sumarCol()
+            }
+
+            function addfilas()
+            {
+                var productoBuscar=document.getElementById("buscarProd").value;
+                var productoCantidad=document.getElementById("cantidad").value;
+
+                document.getElementById("buscarProd").value="";
+                document.getElementById("cantidad").value="";
+
+                 var tbl = document.getElementById('factura');
+                 var lastRow = tbl.rows.length;
+                 var row = tbl.insertRow(lastRow);
+                {% for producto in listaProductos %}
+                        if("{{ producto.Nombre }}"==productoBuscar && Number({{ producto.Cantidad }})>=productoCantidad){
+                           var codigo=row.insertCell(0)
+                           var producto = row.insertCell(1);
+                           var cantidad = row.insertCell(2);
+                           var pUnitario=row.insertCell(3);
+                           var pTotal=row.insertCell(4);
+                           var eliminar=row.insertCell(5);
+
+                            codigo.innerHTML="{{ producto.Codigo }}";
+                            producto.innerHTML = "{{ producto.Nombre }}";
+                            cantidad.innerHTML = productoCantidad;
+                            pUnitario.innerHTML="{{ producto.Precio_Venta }}";
+                            pt = parseFloat("{{ producto.Precio_Venta }}") * parseInt(productoCantidad);
+                            console.log(pt)
+                            pTotal.innerHTML=pt;
+                            sumarCol()
+                            eliminar.innerHTML="<button class='btn btn-danger' onclick='eliminar(this)'><i class='icon-remove'></i></button>";
+                            return false;
+                       }
+
+                   {% endfor %}
+
+        }
+
+        function sumarCol(){
+            var tbl = document.getElementById('factura');
+           var total = 0;
+            for(var i = 1; tbl.rows[i]; i++) {
+                total += Number(tbl.rows[i].cells[4].innerHTML);
+            }
+            llenarTotales(total)
+        }
+    function llenarTotales(subtotal){
+        document.getElementById("Subtotal").value = redondeo2decimales(subtotal);
+        sub=parseFloat(document.getElementById("Subtotal").value);
+
+        document.getElementById("IVA").value=redondeo2decimales(sub*0.12);
+        IVA=parseFloat(document.getElementById("IVA").value)
+
+        document.getElementById("dscto").value=redondeo2decimales(parseFloat(sub)*0.05);
+        dscto=parseFloat(document.getElementById("dscto").value)
+
+        total=document.getElementById("Total").value;
+        document.getElementById("Total").value=redondeo2decimales(sub+IVA-dscto);
+    }
+
+    function redondeo2decimales(numero){
+        var flotante = parseFloat(numero);
+        var resultado = Math.round(flotante*100)/100;
+        return resultado;
+        }
+
+    </script>
+
+
+
+
+
+{% endblock %}

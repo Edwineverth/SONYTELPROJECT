@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+    <div class="row">
+        <div class="well">
+            <form action="/clientes/" method="post" id="formulario" onsubmit="validar(this)" name="formulario"> {% csrf_token %}
+            <div class="row">
+                <div class="col-xs-3"></div>
+                    <div class="col-xs-6">
+                        <legend>Clientes</legend>
+                        <div class="row-fluid">
+                             <div class="col-xs-6">
+                                <label for="cedula">Cedula:</label>
+                                <input type="text" class="form-control" name="cedula" id="cedula" placeholder="Cedula" required>
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" required>
+                                <label for="apellido">Apellido:</label>
+                                <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido" required>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="row-fluid">
+                                    <label for="direccion">Direccion:</label>
+                                    <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Direccion" required>
+                                    <label for="ciudad">Ciudad:</label>
+                                    <input type="text" class="form-control" name="ciudad" id="ciudad" placeholder="Ciudad" required>
+                                    <label for="tlfono">Telefono:</label>
+                                    <input type="text" class="form-control" name="tlfono" id="tlfono" placeholder="Telefono" required>
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+
+                        <div class="row-fluid">
+
+                            <div class="col-xs-6">
+                                <label for="correo">Correo Electronico:</label>
+                                <input type="email" class="form-control" name="correo" id="correo" placeholder="Correo Electronico" required>
+                            </div>
+
+                            <div class="col-xs-6">
+                                Sexo:<br>
+                                <div class="col-xs-3">
+                                <label class="radio" title="Femenino">
+                                    <input type="radio" name="sexo" id="sexo" value="femenino" data-toggle="radio">
+                                    <i class="icon-female"></i>
+                                </label>
+                                    </div>
+                                <div class="col-xs-3">
+                                <label class="radio" title="Masculino">
+                                    <input type="radio" name="sexo" id="sexo" value="masculino" data-toggle="radio" checked>
+                                    <i class="icon-male"></i>
+                                </label>
+                                    </div>
+                            </div>
+
+                        </div>
+                    </div>
+                <div class="col-xs-3"></div>
+
+            </div>
+            <div class="row-fluid">
+                <div class="col-xs-10"></div>
+                <div class="col-xs-2">
+                    <button class="btn btn-primary" id="guardar" type="submit"  title="Guardar"><i class="icon-save text-small"></i></button>
+                </div>
+            </div>
+
+        </form>
+            <br/><br/>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        msj="{{ msj }}"
+        if(msj.length>0)
+            alert(msj)
+
+
+
+
+    </script>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+    <div class="container well">
+        <legend>Cuentas por Pagar</legend>
+        <div class="row">
+            <div class="col-xs-3"></div>
+            <div class="col-xs-6">
+            <form action="/buscarcxp/" method="post">{% csrf_token %}
+                <div class="input-group">
+                    <input class="form-control" type="search" id="buscar" name="buscar" placeholder="Buscar"/>
+                    <span class="input-group-btn"><button class="btn btn-primary" type="submit" value="Buscar"><i class="icon-search"></i></button></span>
+                </div>
+            </form>
+                <br/>
+            </div>
+            <div class="col-xs-3"><button class="btn btn-primary" onclick="print()"><i class="icon-print"></i></button></div>
+        </div>
+        <div class="row">
+            <div class="table-responsive">
+        <table class="table table-bordered">
+            <tr>
+                <th>Nro. Cta x Pagar</th>
+                <th>Concepto</th>
+                <th>Valor Total</th>
+                <th>Saldo</th>
+                <th>Valor Cancelado</th>
+                <th>Estado</th>
+                <th>Fecha de Inicio</th>
+                <th>Fecha Vencimiento</th>
+                <th>Nro. Pedido</th>
+            </tr>
+            {% for ccxpp in entrada%}
+            <tr>
+                <td><a href="/elemento/{{ ccxpp.Numero}}">CCXPP-{{ ccxpp.Numero}}</a></td>
+                <td>{{ ccxpp.Concepto}}</td>
+                <td>{{ ccxpp.Valor_Total}}</td>
+                <td>{{ ccxpp.Valor_Saldo}}</td>
+                <td>{{ ccxpp.Valor_Cancelado}}</td>
+                <td>{{ ccxpp.Estado}}</td>
+                <td>{{ ccxpp.Fecha_Inicio}}</td>
+                <td>{{ ccxpp.Fecha_Vencimiento}}</td>
+                <td>{{ ccxpp.Pedidos_id }}</td>
+            </tr>
+                {%empty%}
+                                <tr>
+                                    <td colspan="10">
+                                        No se encontro ningun registro
+                                    </td>
+                                </tr>
+            {% endfor %}
+        </table>
+        </div>
+        </div>
+        <div class="pagination">
+            <ul>
+                    {% if entrada.has_previous %}
+                <li class="previous">
+                    <a href="?page={{ entrada.previous_page_number }}" class="fui-arrow-left"></a>
+                </li>
+                    {% endif %}
+                <li class="active"><a href="#">{{ entrada.number}}</a>
+                </li>
+                    {% if entrada.has_next %}
+                 <li class="next">
+                    <a href="?page={{ entrada.next_page_number }}" class="fui-arrow-right"></a></li>
+                </li>
+                    {% endif %}
+            </ul>
+        </div>
+    </div>
+
+{%  endblock %}

@@ -1,0 +1,1079 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c19c3422-caf4-40d6-b19a-56f3f18235ab" name="Default" comment="" />
+    <ignored path="Adis.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Adis" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Facturacion/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="30" selection-start="2470" selection-end="2470" vertical-scroll-proportion="0.37254903" vertical-offset="358" max-vertical-offset="4233">
+              <folding>
+                <element signature="e#0#73#0" expanded="true" />
+                <element signature="e#503#584#0" expanded="false" />
+                <element signature="e#651#1182#0" expanded="false" />
+                <element signature="e#1245#1780#0" expanded="false" />
+                <element signature="e#3168#4939#0" expanded="false" />
+                <element signature="e#5005#5932#0" expanded="false" />
+                <element signature="e#5999#6502#0" expanded="false" />
+                <element signature="e#6700#8516#0" expanded="false" />
+                <element signature="e#8581#8982#0" expanded="false" />
+                <element signature="e#9044#9526#0" expanded="false" />
+                <element signature="e#9589#9998#0" expanded="false" />
+                <element signature="e#10203#12307#0" expanded="false" />
+                <element signature="e#12372#14222#0" expanded="false" />
+                <element signature="e#14289#15348#0" expanded="false" />
+                <element signature="e#15414#16324#0" expanded="false" />
+                <element signature="e#16586#16962#0" expanded="false" />
+                <element signature="e#17028#18804#0" expanded="false" />
+                <element signature="e#19099#19613#0" expanded="false" />
+                <element signature="e#19676#19962#0" expanded="false" />
+                <element signature="e#20027#22532#0" expanded="false" />
+                <element signature="e#22785#23125#0" expanded="false" />
+                <element signature="e#23190#25332#0" expanded="false" />
+                <element signature="e#25603#26120#0" expanded="false" />
+                <element signature="e#26183#26470#0" expanded="false" />
+                <element signature="e#26534#29226#0" expanded="false" />
+                <element signature="e#29493#30497#0" expanded="false" />
+                <element signature="e#30565#32289#0" expanded="false" />
+                <element signature="e#32359#32877#0" expanded="false" />
+                <element signature="e#32946#33843#0" expanded="false" />
+                <element signature="e#34041#35241#0" expanded="false" />
+                <element signature="e#35312#35651#0" expanded="false" />
+                <element signature="e#35834#37059#0" expanded="false" />
+                <element signature="e#37124#37462#0" expanded="false" />
+                <element signature="e#37648#37857#0" expanded="false" />
+                <element signature="e#39662#41234#0" expanded="false" />
+                <element signature="e#41304#43020#0" expanded="false" />
+                <element signature="e#43090#45302#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="clientes.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/clientes.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="127" selection-start="691" selection-end="691" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="1530">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listaUsuarios.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/listaUsuarios.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="88" column="123" selection-start="3461" selection-end="3461" vertical-scroll-proportion="-7.1153846" vertical-offset="1311" max-vertical-offset="3281">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listaClientes.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/listaClientes.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="91" column="135" selection-start="4082" selection-end="4082" vertical-scroll-proportion="-10.461538" vertical-offset="1275" max-vertical-offset="2737">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Facturacion/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="40" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="1275">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Facturacion/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="6" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="55" max-vertical-offset="2159">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Adis/urls.py" />
+        <option value="$PROJECT_DIR$/static/css/stilo.css" />
+        <option value="$PROJECT_DIR$/static/js/validar.js" />
+        <option value="$PROJECT_DIR$/templates/Cliente.html" />
+        <option value="$PROJECT_DIR$/templates/usuarios.html" />
+        <option value="$PROJECT_DIR$/templates/inicio.html" />
+        <option value="$PROJECT_DIR$/templates/prueba.html" />
+        <option value="$PROJECT_DIR$/templates/fVenta.html" />
+        <option value="$PROJECT_DIR$/Facturacion/models.py" />
+        <option value="$PROJECT_DIR$/templates/listaPedidos.html" />
+        <option value="$PROJECT_DIR$/templates/listaFactVenta.html" />
+        <option value="$PROJECT_DIR$/templates/productos.html" />
+        <option value="$PROJECT_DIR$/templates/fCompra.html" />
+        <option value="$PROJECT_DIR$/Adis/settings.py" />
+        <option value="$PROJECT_DIR$/Adis/views.py" />
+        <option value="$PROJECT_DIR$/templates/conf/habProductos.html" />
+        <option value="$PROJECT_DIR$/templates/listaProveedores.html" />
+        <option value="$PROJECT_DIR$/templates/conf/habProveedores.html" />
+        <option value="$PROJECT_DIR$/templates/conf/habClientes.html" />
+        <option value="$PROJECT_DIR$/templates/conf/plantillaConf.html" />
+        <option value="$PROJECT_DIR$/templates/conf/habUsuarios.html" />
+        <option value="$PROJECT_DIR$/templates/ccxcc.html" />
+        <option value="$PROJECT_DIR$/templates/ccxpp.html" />
+        <option value="$PROJECT_DIR$/templates/editCCxCC.html" />
+        <option value="$PROJECT_DIR$/templates/editCCxPP.html" />
+        <option value="$PROJECT_DIR$/templates/baseUsuarios.html" />
+        <option value="$PROJECT_DIR$/templates/mision.html" />
+        <option value="$PROJECT_DIR$/templates/vision.html" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/templates/contacto.html" />
+        <option value="$PROJECT_DIR$/templates/acercaDe.html" />
+        <option value="$PROJECT_DIR$/Facturacion/urls.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/conf/tutorial.html" />
+        <option value="$PROJECT_DIR$/Facturacion/views.py" />
+        <option value="$PROJECT_DIR$/templates/clientes.html" />
+        <option value="$PROJECT_DIR$/templates/listaClientes.html" />
+        <option value="$PROJECT_DIR$/templates/listaUsuarios.html" />
+        <option value="$PROJECT_DIR$/templates/conf/reporte.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="54" />
+    <option name="y" value="-8" />
+    <option name="width" value="1320" />
+    <option name="height" value="784" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Adis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Adis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Adis (1)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Adis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Adis (1)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Adis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Adis (1)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Facturacion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Adis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Adis (1)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Adis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="G:/proyectodjango/ProyInventarios" />
+    <property name="SearchEverywhereHistory" value="i" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings />
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Danilo\Dropbox\Septimo Semestre\Prog III\Adis Kevin\Adis\templates" />
+      <recent name="C:\Users\nivek\Desktop\Adis\templates" />
+      <recent name="C:\Users\nivek\PycharmProjects\Adis\static\Flat-UI" />
+      <recent name="C:\Users\nivek\PycharmProjects\Adis\static" />
+      <recent name="C:\Users\nivek\PycharmProjects\Adis\static\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nivek\Desktop\Adis\templates" />
+      <recent name="C:\Users\nivek\Desktop\Adis\static\css" />
+      <recent name="C:\Users\nivek\PycharmProjects\Adis\Facturacion" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Django server.Adis">
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Adis" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Adis" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Adis" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Adis" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Adis" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Adis" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Adis" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Adis" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Adis" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="Adis.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Adis" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <RunnerSettings RunnerId="PythonCover" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonCover" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Django server.Adis" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c19c3422-caf4-40d6-b19a-56f3f18235ab" name="Default" comment="" />
+      <created>1408411317102</created>
+      <updated>1408411317102</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3387574" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25613496" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2204142" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988167" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Facturacion/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="32" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="170">
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+            <element signature="e#503#584#0" expanded="false" />
+            <element signature="e#651#1182#0" expanded="false" />
+            <element signature="e#1245#1780#0" expanded="false" />
+            <element signature="e#3168#4939#0" expanded="false" />
+            <element signature="e#5005#5932#0" expanded="false" />
+            <element signature="e#5999#6502#0" expanded="false" />
+            <element signature="e#6700#8516#0" expanded="false" />
+            <element signature="e#8581#8982#0" expanded="false" />
+            <element signature="e#9044#9526#0" expanded="false" />
+            <element signature="e#9589#9998#0" expanded="false" />
+            <element signature="e#10203#12307#0" expanded="false" />
+            <element signature="e#12372#14222#0" expanded="false" />
+            <element signature="e#14289#15348#0" expanded="false" />
+            <element signature="e#15414#16324#0" expanded="false" />
+            <element signature="e#16586#16962#0" expanded="false" />
+            <element signature="e#17028#18804#0" expanded="false" />
+            <element signature="e#19099#19613#0" expanded="false" />
+            <element signature="e#19676#19962#0" expanded="false" />
+            <element signature="e#20027#22532#0" expanded="false" />
+            <element signature="e#22785#23125#0" expanded="false" />
+            <element signature="e#23190#25332#0" expanded="false" />
+            <element signature="e#25603#26120#0" expanded="false" />
+            <element signature="e#26183#26470#0" expanded="false" />
+            <element signature="e#26534#29226#0" expanded="false" />
+            <element signature="e#29493#30497#0" expanded="false" />
+            <element signature="e#30565#32289#0" expanded="false" />
+            <element signature="e#32359#32877#0" expanded="false" />
+            <element signature="e#32946#33843#0" expanded="false" />
+            <element signature="e#34041#35241#0" expanded="false" />
+            <element signature="e#35312#35651#0" expanded="false" />
+            <element signature="e#35834#37059#0" expanded="false" />
+            <element signature="e#37124#37462#0" expanded="false" />
+            <element signature="e#37648#37857#0" expanded="false" />
+            <element signature="e#39662#41234#0" expanded="false" />
+            <element signature="e#41304#43020#0" expanded="false" />
+            <element signature="e#43090#45302#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Facturacion/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="32" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Facturacion/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="147" column="0" selection-start="5448" selection-end="5448" vertical-scroll-proportion="0.0" vertical-offset="2499" max-vertical-offset="2601" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Adis/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="29" selection-start="2533" selection-end="2533" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2703">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/inicio.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="55" selection-start="560" selection-end="560" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="748" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/stilo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="26" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1156" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Facturacion/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="32" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="170">
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+            <element signature="e#503#584#0" expanded="false" />
+            <element signature="e#651#1182#0" expanded="false" />
+            <element signature="e#1245#1780#0" expanded="false" />
+            <element signature="e#3168#4939#0" expanded="false" />
+            <element signature="e#5005#5932#0" expanded="false" />
+            <element signature="e#5999#6502#0" expanded="false" />
+            <element signature="e#6700#8516#0" expanded="false" />
+            <element signature="e#8581#8982#0" expanded="false" />
+            <element signature="e#9044#9526#0" expanded="false" />
+            <element signature="e#9589#9998#0" expanded="false" />
+            <element signature="e#10203#12307#0" expanded="false" />
+            <element signature="e#12372#14222#0" expanded="false" />
+            <element signature="e#14289#15348#0" expanded="false" />
+            <element signature="e#15414#16324#0" expanded="false" />
+            <element signature="e#16586#16962#0" expanded="false" />
+            <element signature="e#17028#18804#0" expanded="false" />
+            <element signature="e#19099#19613#0" expanded="false" />
+            <element signature="e#19676#19962#0" expanded="false" />
+            <element signature="e#20027#22532#0" expanded="false" />
+            <element signature="e#22785#23125#0" expanded="false" />
+            <element signature="e#23190#25332#0" expanded="false" />
+            <element signature="e#25603#26120#0" expanded="false" />
+            <element signature="e#26183#26470#0" expanded="false" />
+            <element signature="e#26534#29226#0" expanded="false" />
+            <element signature="e#29493#30497#0" expanded="false" />
+            <element signature="e#30565#32289#0" expanded="false" />
+            <element signature="e#32359#32877#0" expanded="false" />
+            <element signature="e#32946#33843#0" expanded="false" />
+            <element signature="e#34041#35241#0" expanded="false" />
+            <element signature="e#35312#35651#0" expanded="false" />
+            <element signature="e#35834#37059#0" expanded="false" />
+            <element signature="e#37124#37462#0" expanded="false" />
+            <element signature="e#37648#37857#0" expanded="false" />
+            <element signature="e#39662#41234#0" expanded="false" />
+            <element signature="e#41304#43020#0" expanded="false" />
+            <element signature="e#43090#45302#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Facturacion/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="32" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Facturacion/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="147" column="0" selection-start="5448" selection-end="5448" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2601" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="414" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/Flat-UI/js/html5shiv.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="414" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-5.464286" vertical-offset="2601" max-vertical-offset="36040" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/stilo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="27" selection-start="538" selection-end="538" vertical-scroll-proportion="0.6333333" vertical-offset="221" max-vertical-offset="1394" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/inicio.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="48" selection-start="2351" selection-end="2351" vertical-scroll-proportion="-17.0" vertical-offset="306" max-vertical-offset="1309" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/prueba.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="139" column="13" selection-start="1502" selection-end="5939" vertical-scroll-proportion="-9.769231" vertical-offset="2109" max-vertical-offset="2533" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="0" selection-start="5785" selection-end="5785" vertical-scroll-proportion="0.33333334" vertical-offset="1829" max-vertical-offset="4522" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Adis/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/productos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="101" selection-start="424" selection-end="424" vertical-scroll-proportion="0.40328467" vertical-offset="0" max-vertical-offset="3230">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fCompra.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="229" column="55" selection-start="10049" selection-end="10049" vertical-scroll-proportion="0.50364965" vertical-offset="3617" max-vertical-offset="4879">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Adis/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="22" selection-start="2526" selection-end="2526" vertical-scroll-proportion="0.61893207" vertical-offset="918" max-vertical-offset="2720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/proveedores.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="14" selection-start="2501" selection-end="2501" vertical-scroll-proportion="2.1191137" vertical-offset="0" max-vertical-offset="1071">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/conf/habProveedores.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="32" selection-start="2003" selection-end="2003" vertical-scroll-proportion="-6.5384617" vertical-offset="765" max-vertical-offset="1326">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/conf/plantillaConf.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="66" selection-start="611" selection-end="611" vertical-scroll-proportion="-7.1923075" vertical-offset="17" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/conf/habProductos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="43" selection-start="0" selection-end="2778" vertical-scroll-proportion="-8.653846" vertical-offset="710" max-vertical-offset="1326">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/conf/habUsuarios.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="77" selection-end="1043" vertical-scroll-proportion="-7.8461537" vertical-offset="306" max-vertical-offset="1326">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/conf/habClientes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="43" selection-start="2121" selection-end="2121" vertical-scroll-proportion="-3.9230769" vertical-offset="867" max-vertical-offset="1326">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/editCCxCC.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="125" selection-start="3673" selection-end="3786" vertical-scroll-proportion="0.5104712" vertical-offset="1590" max-vertical-offset="2499">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/baseUsuarios.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="83" selection-start="231" selection-end="231" vertical-scroll-proportion="0.23545706" vertical-offset="0" max-vertical-offset="2159">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/editCCxPP.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="128" selection-start="3636" selection-end="3636" vertical-scroll-proportion="0.7408377" vertical-offset="1485" max-vertical-offset="2499">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/vision.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="8" selection-start="161" selection-end="161" vertical-scroll-proportion="0.2825485" vertical-offset="0" max-vertical-offset="361">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/mision.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="454" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="238">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ccxpp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="119" selection-start="809" selection-end="809" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="1343">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ccxcc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="119" selection-start="725" selection-end="810" vertical-scroll-proportion="0.75654453" vertical-offset="0" max-vertical-offset="1411">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="42" selection-start="2588" selection-end="2588" vertical-scroll-proportion="-1.8481675" vertical-offset="1522" max-vertical-offset="2261">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/contacto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="100" selection-start="86" selection-end="618" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/acercaDe.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="92" selection-start="554" selection-end="554" vertical-scroll-proportion="0.43037975" vertical-offset="0" max-vertical-offset="395">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/conf/tutorial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="84" selection-start="699" selection-end="699" vertical-scroll-proportion="0.43037975" vertical-offset="0" max-vertical-offset="395">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="137" selection-start="5161" selection-end="5201" vertical-scroll-proportion="0.86649215" vertical-offset="1233" max-vertical-offset="2346">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/listaPedidos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="39" selection-start="193" selection-end="193" vertical-scroll-proportion="0.3115183" vertical-offset="0" max-vertical-offset="1326">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/listaProveedores.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="69" selection-start="3490" selection-end="3490" vertical-scroll-proportion="0.34293193" vertical-offset="1314" max-vertical-offset="2482">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/listaFactVenta.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="101" selection-start="357" selection-end="365" vertical-scroll-proportion="0.2984293" vertical-offset="39" max-vertical-offset="1326">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/conf/reporte.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="42" selection-start="1333" selection-end="1333" vertical-scroll-proportion="0.4895288" vertical-offset="357" max-vertical-offset="901">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fVenta.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="293" column="13" selection-start="6350" selection-end="12553" vertical-scroll-proportion="5.08377" vertical-offset="3039" max-vertical-offset="5185">
+          <folding>
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1409804112000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/listaClientes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="135" selection-start="4082" selection-end="4082" vertical-scroll-proportion="-10.461538" vertical-offset="1275" max-vertical-offset="2737">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/listaUsuarios.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="123" selection-start="3461" selection-end="3461" vertical-scroll-proportion="-7.1153846" vertical-offset="1311" max-vertical-offset="3281">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Facturacion/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="6" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2159">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Adis/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="19" selection-start="2222" selection-end="2237" vertical-scroll-proportion="0.7083333" vertical-offset="510" max-vertical-offset="918">
+          <folding>
+            <element signature="e#1#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/clientes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="127" selection-start="691" selection-end="691" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="1530">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Facturacion/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="40" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="1275">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/usuarios.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="43" selection-start="596" selection-end="596" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="1547">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Facturacion/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="30" selection-start="2470" selection-end="2470" vertical-scroll-proportion="0.37254903" vertical-offset="358" max-vertical-offset="4233">
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+            <element signature="e#503#584#0" expanded="false" />
+            <element signature="e#651#1182#0" expanded="false" />
+            <element signature="e#1245#1780#0" expanded="false" />
+            <element signature="e#3168#4939#0" expanded="false" />
+            <element signature="e#5005#5932#0" expanded="false" />
+            <element signature="e#5999#6502#0" expanded="false" />
+            <element signature="e#6700#8516#0" expanded="false" />
+            <element signature="e#8581#8982#0" expanded="false" />
+            <element signature="e#9044#9526#0" expanded="false" />
+            <element signature="e#9589#9998#0" expanded="false" />
+            <element signature="e#10203#12307#0" expanded="false" />
+            <element signature="e#12372#14222#0" expanded="false" />
+            <element signature="e#14289#15348#0" expanded="false" />
+            <element signature="e#15414#16324#0" expanded="false" />
+            <element signature="e#16586#16962#0" expanded="false" />
+            <element signature="e#17028#18804#0" expanded="false" />
+            <element signature="e#19099#19613#0" expanded="false" />
+            <element signature="e#19676#19962#0" expanded="false" />
+            <element signature="e#20027#22532#0" expanded="false" />
+            <element signature="e#22785#23125#0" expanded="false" />
+            <element signature="e#23190#25332#0" expanded="false" />
+            <element signature="e#25603#26120#0" expanded="false" />
+            <element signature="e#26183#26470#0" expanded="false" />
+            <element signature="e#26534#29226#0" expanded="false" />
+            <element signature="e#29493#30497#0" expanded="false" />
+            <element signature="e#30565#32289#0" expanded="false" />
+            <element signature="e#32359#32877#0" expanded="false" />
+            <element signature="e#32946#33843#0" expanded="false" />
+            <element signature="e#34041#35241#0" expanded="false" />
+            <element signature="e#35312#35651#0" expanded="false" />
+            <element signature="e#35834#37059#0" expanded="false" />
+            <element signature="e#37124#37462#0" expanded="false" />
+            <element signature="e#37648#37857#0" expanded="false" />
+            <element signature="e#39662#41234#0" expanded="false" />
+            <element signature="e#41304#43020#0" expanded="false" />
+            <element signature="e#43090#45302#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

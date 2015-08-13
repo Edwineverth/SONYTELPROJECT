@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+    <legend>Productos</legend>
+
+    <div class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-6">
+            <label for="">Buscar</label>
+
+            <form action="/buscarProd/" method="post">{% csrf_token %}
+            <div class="input-group">
+                <input class="form-control" type="search" name="buscar" placeholder="Buscar" required/>
+                <span class="input-group-btn"><button class="btn btn-primary" type="submit" value="Buscar"><i class="icon-search"></i></button></span>
+            </div>
+
+            </form>
+        </div>
+        <div class="col-xs-3"><a href="#Ingreso" class="btn btn-primary" data-toggle="modal" title="Agregar Producto"><i class="icon-plus"></i></a></div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="table-responsive">
+        <table class="table table-bordered">
+                <tr>
+                    <th>Codigo</th>
+                    <th>Nombre</th>
+                    <th>Categoria</th>
+                    <th>Cantidad</th>
+                    <th>Precio de Venta</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                {% for prod in productos %}
+                <tr>
+                    <td>{{ prod.Codigo }}</td>
+                    <td>{{ prod.Nombre }}</td>
+                    <td>{{ prod.categoria.Nombre }}</td>
+                    <td>{{ prod.Cantidad }}</td>
+                    <td>{{ prod.Precio_Venta }}</td>
+                    <td><a href="#Formulario{{ prod.Codigo }}" class="btn btn-primary" data-toggle="modal" title="Actualizar {{ prod.Nombre }}"><i class="icon-refresh"></i></a></td>
+                    <td><a href="#eliminar{{ prod.Codigo }}" class="btn btn-danger" data-toggle="modal" title="Eliminar {{ prod.Nombre }}"><i class="icon-remove"></i></a></td>
+                </tr>
+                    {%empty%}
+                            <tr>
+                                <td colspan="6">
+                                    No se encontro ningun registro
+                                </td>
+                            </tr>
+                {% endfor %}
+            </table>
+    </div>
+    </div>
+
+    <div class="pagination">
+      <ul>
+          {% if productos.has_previous %}
+        <li class="previous">
+          <a href="?page={{ productos.previous_page_number }}" class="fui-arrow-left"></a>
+        </li>
+          {% endif %}
+        <li class="active"><a class="btn-primary" href="#">{{ productos.number }}</a></li>
+
+      {% if productos.has_next %}
+        <li class="next">
+          <a href="?page={{ productos.next_page_number }}" class="fui-arrow-right"></a>
+        </li>
+      {% endif %}
+      </ul>
+    </div>
+
+    {% for prod in productos %}
+        <div id="eliminar{{ prod.Codigo }}" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6>Eliminar Productos<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h6>
+                </div>
+                <form action="/eliminarProductos/" method="post">{% csrf_token %}
+                    <div class="modal-body">
+                        Desea Eliminar a {{ prod.Nombre }}?
+                        <div style="display: none"><input type="text" name="codigoElim" value="{{ prod.Codigo }}"/></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                        <button type="submit" class="btn btn-danger">Si</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+    <!-- Modal HTML -->
+    {% for prod in productos %}
+
+    <div id="Formulario{{ prod.Codigo }}" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Editar Productos<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h5>
+                </div>
+                <form action="/productos/" method="post">{% csrf_token %}
+                    <div class="modal-body">
+
+                        <div class="row">
+
+                            <div class="col-xs-6">
+                                <label for="codigo">Codigo:</label>
+                                <input type="text" class="form-control" name="codigo" value="{{ prod.Codigo }}" readonly/>
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" class="form-control" name="nombre" value="{{ prod.Nombre }}"/>
+                            </div>
+
+                            <div class="col-xs-6">
+                                <label for="cantidad">Cantidad:</label>
+                                <input type="text" class="form-control" name="cantidad" value="{{ prod.Cantidad }}"/>
+                                <label for="PVenta">Precio de Venta:</label>
+                                <input type="text" class="form-control" name="PVenta" value="{{ prod.Precio_Venta }}"/>
+                                <div style="display: none"><input type="text" name="categoriaID" value="{{ prod.categoria.id }}"/></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary"><i class="icon-save"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+
+
+    <div id="Ingreso" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Ingresar Productos<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h5>
+                </div>
+                <form action="/agregarProductos/" method="post">{% csrf_token %}
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="codigo">Codigo:</label>
+                                <input type="text" class="form-control" name="codigo" placeholder="Codigo" value="P00{{ nProd }}" readonly/>
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" class="form-control" name="nombre" placeholder="Nombre" autocomplete="off"/>
+                            </div>
+
+                            <div class="col-xs-6">
+                                <label for="cantidad">Cantidad:</label>
+                                <input type="text" class="form-control" name="cantidad" placeholder="Cantidad" autocomplete="off"/>
+                                <label for="PVenta">Precio de Venta:</label>
+                                <input type="text" class="form-control" name="PVenta" placeholder="Precio de Venta" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <br/>Categorias: <br/>
+                        <div class="row">
+                            <select name="info" id="categoria" class="mbn">
+                            <optgroup label="">
+                            {% for lista in categorias %}
+                                 <option value="{{ lista.id }}">{{ lista.Nombre }}</option>
+                            {% endfor %}
+                             </optgroup>
+                          </select>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary"><i class="icon-save"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}

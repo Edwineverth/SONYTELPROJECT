@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+  <legend>Lista de Pedidos</legend>
+        <div class="col-xs-3"></div>
+        <div class="col-xs-6">
+        <form action="/buscarRegPedidos/" method="POST">{% csrf_token %}
+            <div class="input-group">
+                <input class="form-control" type="search" name="buscar" placeholder="Buscar" required/>
+                <span class="input-group-btn"><button class="btn btn-primary" type="submit" value="Buscar"><i class="icon-search"></i></button></span>
+            </div>
+        </form>
+        </div>
+
+
+    <div class="col-md-12">
+    <br>
+        <div class="row">
+            {% if mensaje %}
+                <div class="alert alert-success" role="alert" style="width: auto"><span class="glyphicon glyphicon-ok"></span> <strong>{{mensaje}}</strong></div>
+            {% endif%}
+            <div class="row">
+                <table id="tablaClientes" class="table table-bordered table-striped" >
+                    <thead>
+                        <th>Numero de Pedido</th>
+                        <th>Fecha de Emision</th>
+                        <th>Proveedor</th>
+                        <th>Estado</th>
+                        <th>Total</th>
+                    </thead>
+
+                    <tbody>
+                        {%for Pedido in lista%}
+                            <tr>
+                                <td>{{Pedido.Numero}}</td>
+                                <td>{{Pedido.Fecha_Emision}}</td>
+                                <td>{{Pedido.RUC.Razon_Social}}</td>
+                                <td>{{Pedido.Estado}}</td>
+                                <td>{{Pedido.Total}}</td>
+                            </tr>
+                            {%empty%}
+                            <tr>
+                                <td colspan="6">
+                                    No se encontro ningun registro
+                                </td>
+                            </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+  <div class="pagination">
+        <ul>
+                {% if lista.has_previous %}
+            <li class="previous">
+                <a href="?page={{ lista.previous_page_number }}" class="fui-arrow-left"></a>
+            </li>
+                {% endif %}
+            <li class="active"><a href="#">{{ lista.number}}</a>
+            </li>
+                {% if lista.has_next %}
+             <li class="next">
+                <a href="?page={{ lista.next_page_number }}" class="fui-arrow-right"></a></li>
+            </li>
+                {% endif %}
+        </ul>
+  </div>
+
+    </div>
+
+{% endblock%}
