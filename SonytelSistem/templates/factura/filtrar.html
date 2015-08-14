@@ -1,74 +1,73 @@
 
 {% extends "base.html" %}
-{% block content %}ff
+{% block content %}
+<h1>LISTADO DE FACTURAS</h1>
+<span class="label label-default">Buscar</span>
 <div class="well">
-		<h1>REPORTE CATEGORIAS</h1>
-          <div class="btn-toolbar" role="toolbar">
-              <div class="btn-group" role="group">
-                <a href="{% url 'registrar_cliente'  %}">
-                <button name="btninsertar" type="button" class="btn btn-default" id="btninsertar">INSERTAR</button>
-                </a>
-                
-                <a href="{% url 'registrar_cliente'  %}">
-				<button type="button" class="btn btn-default">ACTUALIZAR</button>
-                </a>
-                <a href="{% url 'registrar_cliente'  %}">
-                <button type="button" class="btn btn-default">ELIMINAR</button>
-               	</a>
-                <a href="{% url 'registrar_cliente'  %}">
-                <button type="button" class="btn btn-default">REPORTE</button>
-                <a href="{% url 'registrar_cliente'  %}">
-                <button type="button" class="btn btn-default">IMPRIMIR</button>
-              	</a>
-              </div>
-              
-      </div>
-<p>&nbsp;</p>
-<form method="POST" action="/cliente/buscar/">
-  {% csrf_token %}
-  <div class="col-lg-6" >
-			      <div class="input-group">
-			        <input type="text" value="buscar" class="form-control" placeholder="Ingrese el cliente a buscar" name="buscalo">
-			        <span class="input-group-btn">
-			          <button class="btn btn-default" type="submit" >Buscar</button>
-			        </span></div>
-			      <!-- /input-group -->
-			  </div>    	
-	    </form>
+  <p>Registro de facturas emitidas </p>
+    <form method="POST" action="/cliente/buscar/">{% csrf_token %}
+		 <div class="col-lg-6" >
+		      <div class="input-group">
+		        <input type="text" class="form-control" placeholder="Ingrese el cliente a buscar" name="buscalo">
+		        <span class="input-group-btn">
+		          <button class="btn btn-default" type="submit" >Buscar</button>
+		        </span></div>
+		      <!-- /input-group -->
+		  </div>    	
+    </form>
 
-	    <!-- /.col-lg-6 -->
-	    </br>
-	    <br/>
+    <!-- /.col-lg-6 -->
+    </br>
+    <br/>
+	<div class="table-responsive">
+		<table class="table table-hover">
+	        <thead>
+	          <tr>
+	            <td class="success">#</td>
+	            <td class="success">SUBTOTAL</td>
+	            <td class="success">IVA</td>
+	            <td class="success">DESCUENTO</td>
+	            <td class="success">TOTAL</td>
+	            <td class="success">FECHA</td>
+	            <td class="success">ESTADO</td>
+	            <td class="success">CLIENTE</td>
+	            
+	          </tr>
+	        </thead>
+	        <tbody >
+	   
+	         
+	          <!-- Aplicadas en las celdas (<td> o <th>) -->
+		          {% for fact in  listarFacturas %}
+			          <tr>
+			          	<td >{{fact.id}}</td>
+		          		<td >{{fact.fac_subtotal}}</td>
+			            <td >{{fact.fac_iva}}</td>
+			            <td >{{fact.fac_descuento}}</td>
+			            <td >{{fact.fac_total}}</td>
+			            <td >{{fact.fac_fecha}}</td>
+			            <td >{{fact.fac_estado}}</td>
+			            {% for cli in clientes %}
+			            	{% if cli.id == fact.cli_id %}
+			            		<td >{{cli.cli_nombre}} {{cli.cli_apellido}}</td>
+			            	{% endif %}
+			            {% endfor %}
+			            
+			           
+			          	
+			           
+			          </tr>
+		          {% endfor %}
+	      	</tbody>
+		</table>
 	</div>
-<div id="datos">
-	
+   
+</div>
 </div>
 
 {% endblock content %}
 
 {% block js %}
 	
-<script>
-		$('input').on('keypress',filtrado);
-		function filtrado(){
-			var nombre = $(this).val();
-			console.log(nombre);
-			$.ajax({
-				data:{'nombre':nombre},
-				url:'/categoria/filtrador/',
-				type: 'get',
 
-				success: function(data){
-					var html = '<div class="table-responsive"><table class="table table-hover"><thead><tr><td class="success">NOMBRE</td><td class="success">DESCRIPCION</td></tr></thead><tbody >'
-					for(var i = 0; i<data.length ; i++){
-						html += '<tr><td >'+data[i].fields.mar_nombre+'</td><td >'+data[i].fields.mar_descripcion+'</td></tr>'
-					}
-					var uni= '</tbody></table></div>'
-					$('#datos').html(html+uni);
-				}
-			});
-	
-		}
-
-	</script>	
 {% endblock js %}

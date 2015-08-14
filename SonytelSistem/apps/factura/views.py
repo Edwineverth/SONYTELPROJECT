@@ -11,6 +11,16 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 	
 
+
+class listarFacturas(ListView):
+	template_name='factura/filtrar.html'
+	context_object_name='listarFacturas'
+	model=Factura
+	def get_context_data(self, **kwargs):
+		ctx = super(listarFacturas, self).get_context_data(**kwargs)
+		ctx['clientes'] = Clientes.objects.all()
+		return ctx
+
 				
 def generarVentaFactura(request):
 
@@ -55,6 +65,7 @@ def guardarFactura(request):
 		)
 	detalle.save()
 	refrescarStock = listarProductos.pro_cantidad - int(cantidad)
+	#PROCESO PARA ACTUALIZAR EL STOCK DEL PRODUCTO ES NECESARIO INGRESAR TODAS LAS CANTIDADES  DEL PRODUCTO
 	producto = Productos(
 		id=listarProductos.id,
 		pro_nombre= listarProductos.pro_nombre,
