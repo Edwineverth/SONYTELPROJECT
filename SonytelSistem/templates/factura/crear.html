@@ -104,7 +104,7 @@
 
 
 		var contador  = 0;
-		{% for prod in listarproductos %}
+		{% for prod in listarProductos %}
 			nombre[contador]="{{prod.pro_nombre}}";
 			console.log(nombre[contador]);
 			contador=contador+1;
@@ -143,7 +143,7 @@
 			var lastRow= tabla.rows.length;
 			var row = tabla.insertRow(lastRow);
       var lp= 0
-			{% for producto in listarproductos  %}
+			{% for producto in listarProductos  %}
             console.log('aki')
 				if("{{producto.pro_nombre}}"==productobuscar && Number({{producto.pro_cantidad}})>=productoCant){
 						var codigo = row.insertCell(0);
@@ -157,7 +157,7 @@
 						codigo.innerHTML="{{producto.id}}";
 						producto.innerHTML="{{producto.pro_nombre}}";
 						cantidad.innerHTML =productoCant;
-						preciou.innerHTML= "{{producto.pro_pvp}}";
+						preciou.innerHTML= parseFloat("{{producto.pro_pvp}}");
             console.log({{producto.pro_pvp}});
 						pt = parseFloat("{{ producto.pro_pvp }}") * parseInt(productoCant);
             console.log(pt)
@@ -228,7 +228,7 @@
 		if (tabla.rows.length >1){
 			
 			for (var i = 1; tabla.rows[i];i++){
-				$.get('factura/crear/',{
+				$.get('/factura/crearr/',{
 					codigo:document.getElementById("tablafactura").rows[i].cells[0].innerHTML,
 					cantidad:document.getElementById("tablafactura").rows[i].cells[2].innerHTML,
 					precio:document.getElementById("tablafactura").rows[i].cells[3].innerHTML,
@@ -247,7 +247,7 @@
 
         alert("Datos Guardados Correctamente... ")
 
-        setTimeout("location.href='/generarFacturaVenta'",2000);
+        
 			
 			}
 		

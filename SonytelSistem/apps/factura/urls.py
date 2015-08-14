@@ -6,7 +6,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
     
     url(r'^crear/$', generarVentaFactura,name='crearFactura'),
-    url(r'^crear/$', guardarFactura,name='crearFactura'),
+    url(r'^crearr/$', guardarFactura,name='crearFacturad'),
    
     
 )
