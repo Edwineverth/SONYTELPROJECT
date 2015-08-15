@@ -64,5 +64,8 @@ def guardarMantenimiento(request):
 		cli_id = (Clientes.objects.get(cli_nombre=cliente)).id
    		)
 	mant.save()
+	arti = (Articulossegunda.objects.get(art_nombre=articulo))
+	articulos = Articulossegunda(id=arti.id,art_nombre=arti.art_nombre,art_precio=arti.art_precio,art_cantidad=arti.art_cantidad,art_serie=arti.art_serie,art_estado="M",mar_id=arti.mar_id,mod_id=arti.mod_id)
+	articulos.save()
 
 	return render_to_response('mantenimiento/crear.html',RequestContext(request))
