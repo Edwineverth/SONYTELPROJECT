@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'apps.sistema',
     'apps.articulos',
     'apps.facturadetallle',
+    'apps.mantenimiento',
     'bootstrap3',
 
 )

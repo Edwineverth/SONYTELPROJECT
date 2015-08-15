@@ -94,7 +94,8 @@ class Mantenimiento(models.Model):
  
     man_fecha = models.DateField()
     man_garantia = models.IntegerField()
-    man_informe = models.CharField(max_length=300)
+    man_informe = models.TextField(max_length=300)
+
     man_fechaentrega = models.DateField()
     man_estado = models.CharField(max_length=1, blank=True)
     solm = models.ForeignKey('Solicitudmantenimiento')
@@ -172,13 +173,13 @@ class Repuestos(models.Model):
 
 class Solicitudmantenimiento(models.Model):
  
-    solm_fecha = models.DateField()
-    solm_falla = models.CharField(max_length=100)
-    solm_observaciones = models.CharField(max_length=100, blank=True)
-    solm_abono = models.FloatField()
-    solm_saldo = models.FloatField()
-    solm_total = models.FloatField()
-    solm_estado = models.CharField(max_length=1, blank=True)
+    solm_fecha = models.DateField(verbose_name=u"Fecha")
+    solm_falla = models.CharField(max_length=100,verbose_name=u"Falla")
+    solm_observaciones = models.CharField(max_length=100, blank=True,verbose_name=u"Observacion")
+    solm_abono = models.FloatField(verbose_name=u"Abono")
+    solm_saldo = models.FloatField(verbose_name=u"Saldo")
+    solm_total = models.FloatField(verbose_name=u"Total")
+    solm_estado = models.CharField(max_length=1, blank=True,verbose_name=u"Estado")
     art = models.ForeignKey(Articulossegunda)
     cli = models.ForeignKey(Clientes, blank=True, null=True)
 
