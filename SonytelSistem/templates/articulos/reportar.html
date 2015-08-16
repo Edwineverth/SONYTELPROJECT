@@ -1,18 +1,51 @@
+
+
 {% extends "base.html" %}
 {% block content %}
-
-    <form method="post">
+<div class="alert col-md-offset-2 alert-info col-md-8" role="alert"><h1>REGISTRAR EL EQUIPO</h1></div>
+<div class="well"> 
+<form method="post">
     {% load bootstrap3 %}
     <div id="form">
         {% csrf_token %}
-	    {% bootstrap_form form %}
-	    <!--<ul   > 
-	        <li  Identificación = "sujeto"  clase = "contacto" > {{form.cli_cedula}} </li> 
-	        
-    	</ul> 
-	    -->
-	    <input type="submit">
-	<form>
+	    
+	    <div class="row">
+        <div class="col-md-6">
+                  {% bootstrap_field form.art_nombre %} 
+          </div>
+        </div>
+<div class="row">
+          
+          
+          <div class="col-md-6">
+          
+          {% bootstrap_field form.art_precio %} 
+          </div>
+          <div class="col-md-6">
+          {% bootstrap_field form.art_cantidad %} 
+          
+          </div>
+  <div class="col-md-6">
+          {% bootstrap_field form.art_serie %} 
+          
+          </div>
+      
+</div>
+<div class="row">
+        <div class="col-md-6">
+        {% bootstrap_field form.mar %} 
+        
+        </div>
+        <div class="col-md-6">
+        <ul>{% bootstrap_field form.mar %} </ul>
+        
+        </div>
+      </div>
+	      
+
+	    {% bootstrap_button "Save" button_type="submit" button_class="btn-primary" %}
+	</form></div>
+   
 	
 
 {% endblock content %}
