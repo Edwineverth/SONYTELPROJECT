@@ -13,13 +13,13 @@ from django.db import models
 
 
 class Articulossegunda(models.Model):
-    art_nombre = models.CharField(max_length=30)
-    art_precio = models.FloatField()
-    art_cantidad = models.IntegerField()
-    art_serie = models.CharField(max_length=50)
-    mar = models.ForeignKey('Categoria', blank=True, null=True)
-    mod = models.ForeignKey('Modelo', blank=True, null=True)
-    art_estado = models.CharField(max_length=1)
+    art_nombre = models.CharField(max_length=30,verbose_name=u"Nombre:")
+    art_precio = models.FloatField(verbose_name=u"Precio:")
+    art_cantidad = models.IntegerField(verbose_name=u"Cantidad")
+    art_serie = models.CharField(max_length=50,verbose_name=u"Serie")
+    mar = models.ForeignKey('Categoria', blank=True, null=True,verbose_name=u"Marca")
+    mod = models.ForeignKey('Modelo', blank=True, null=True,verbose_name=u"Modelo")
+    art_estado = models.CharField(max_length=1,verbose_name=u"Estado")
     def __unicode__(self):
         return self.art_nombre
 
