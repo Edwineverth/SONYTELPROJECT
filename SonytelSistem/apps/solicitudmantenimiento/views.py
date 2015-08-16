@@ -17,6 +17,22 @@ class listarSolicitudmantenimiento(ListView):
 	template_name='mantenimiento/listar.html'
 	context_object_name='Solicitudmantenimiento'
 	model=Solicitudmantenimiento
+	def get_context_data(self, **kwargs):
+		ctx = super(listarSolicitudmantenimiento, self).get_context_data(**kwargs)
+		ctx['clientes'] = Clientes.objects.all()
+		ctx['articulos'] = Articulossegunda.objects.all()
+
+		return ctx
+class listarSolicitudmantenimientoespera(ListView):
+	template_name='mantenimiento/crearregistro.html'
+	context_object_name='Solicitudmantenimiento'
+	model=Solicitudmantenimiento
+	def get_context_data(self, **kwargs):
+		ctx = super(listarSolicitudmantenimientoespera, self).get_context_data(**kwargs)
+		ctx['clientes'] = Clientes.objects.all()
+		ctx['articulos'] = Articulossegunda.objects.all()
+		
+		return ctx
 #ACTUALIZAR ARTICULOS
 class editarSolicitudmantenimiento(UpdateView):
 	model = Solicitudmantenimiento
@@ -27,6 +43,10 @@ class eliminarSolicitudmantenimiento(DeleteView):
 	model = Solicitudmantenimiento
 	context_object_name="Solicitudmantenimiento"
 	template_name = 'mantenimiento/eliminar.html'
+	def get_context_data(self, **kwargs):
+		ctx = super(eliminarSolicitudmantenimiento, self).get_context_data(**kwargs)
+		ctx['clientes'] = Clientes.objects.all()
+		return ctx
 	success_url = reverse_lazy('home')
 
 #FILTRADO DE Solicitudmantenimiento *****

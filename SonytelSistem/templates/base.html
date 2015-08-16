@@ -9,7 +9,9 @@
 <!-- Bootstrap -->
 <link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap.css">
 <link rel="stylesheet" href="{{STATIC_URL}}css/stilo.css">
-
+<link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap-datetimepicker.css">
+<link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap-datetimepicker.min.css">
+    
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,47 +26,59 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topFixedNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-      <a class="navbar-brand" href="#">SIGASOFT</a></div>
+      <a class="navbar-brand" href="#">SIGASOFT SA</a></div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="topFixedNavbar1">
       <ul class="nav navbar-nav">
-        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">INVENTARIOS</a>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">INVENTARIO</a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="Historia.html">PRODUCTOS</a></li>
-            <li><a href="Mision.html">ARTICULOS</a></li>
-            <li><a href="Vision.html">PROVEEDORES</a></li>
-            <li><a href="Vision.html">ORDEN COMPRA</a></li>
+            <li><a href="Historia.html">REGISTRAR PRODUCTO</a></li>
+            <li><a href="Mision.html">LISTADO DE PRODUCTOS</a></li>
+            
+                    
             
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><a href="/proveedor/registrar">CREAR PROVEEDOR</a></li>
+            <li><a href="#">LISTADO PROVEEDORES</a></li>
+           
+            <li><a href="#">CREAR PEDIDO</a></li>
+            <li><a href="#">LISTADO DE PEDIDOS</a></li>
           </ul>
-          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">VENTAS</a>
+       
+        </li>
+        <li></li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">VENTAS</a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="Historia.html">FACTURA</a></li>
-            <li><a href="Mision.html">DETALLES FACTURA</a></li>
-            <li><a href="/cliente/filtrar">CLIENTES</a></li>
-            
+            <li><a href="/factura/crear">GENERAR FACTURA</a></li>
+            <li><a href="/factura/listado">LISTAR FACTURAS</a></li>
+          
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="/cliente/registrar">REGISTRAR CLIENTE</a></li>
+            <li><a href="/cliente/filtrar">LISTADO CLIENTES</a></li>
             <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><a href="#">CREAR PRODUCTO</a></li>
+            <li><a href="#">LISTADO DE PRODUCTOS</a></li>
+            <li><a href="/categoria/registrar">CREAR CATEGORIA/MARCAS</a></li>
           </ul>
-        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MANTENIMIENTO</a>
+       
+        </li>
+         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MANTENIMIENTO</a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="Historia.html">SOLICITUD</a></li>
-            <li><a href="Mision.html">REPORTE TECNICO</a></li>
-            <li><a href="Vision.html">FACTURACION</a></li>
-            
+            <li><a href="articulos/registrar">REGISTRAR ARTICULO</a></li>
+            <li><a href="Mision.html">LISTAR ARTICULOS</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="Vision.html">REGISTRO DE MANTENIMIENTO</a></li>
+            <li><a href="Vision.html">LISTADO DE MANTENIMIENTOS</a></li>
             <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-              
+            <li><a href="/solicitudmantenimiento/crear/">GENERAR SOLICITUD</a></li>
+            <li><a href="/solicitudmantenimiento/listar/">LISTADO SOLICITUDES</a></li>
+            <li><a href="/solicitudmantenimiento/espera/">SOLICITUDES EN ESPERA</a></li>
+            <li class="divider"></li>
+            <li><a href="/categoria/registrar">CREAR CATEGORIA</a></li>
+            <li><a href="/modelo/registrar">CREAR MODELOS</a></li>
             
           </ul>
+        
         </li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
@@ -76,15 +90,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Iniciar Sesión</a></li>
         <li><a href="#">Registrarse</a></li>
-        <li class="dropdown">
-<ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
+       
       </ul>
     </div>
     <!-- /.navbar-collapse -->
@@ -164,9 +170,12 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="{{STATIC_URL}}js/jquery-1.11.2.min.js"></script> 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="{{STATIC_URL}}js/bootstrap-datetimepicker.js"></script>
 <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
+<script src="{{STATIC_URL}}js/moment.js"></script>
+
+<script src="{{STATIC_URL}}js/bootstrap-datetimepicker.min.js"></script>
 <script src="{{ STATIC_URL }}Flat-UI/js/jquery.ui.touch-punch.min.js"></script>
-<script src="{{ STATIC_URL }}Flat-UI/js/bootstrap.min.js"></script>
 <script src="{{ STATIC_URL }}Flat-UI/js/bootstrap-select.js"></script>
 <script src="{{ STATIC_URL }}Flat-UI/js/bootstrap-switch.js"></script>
 <script src="{{ STATIC_URL }}Flat-UI/js/flatui-checkbox.js"></script>

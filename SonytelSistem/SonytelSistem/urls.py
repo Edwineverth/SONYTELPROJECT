@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     url(r'^mensajeria/',include('apps.mensajeria.urls')),
     url(r'^facturadetalle/',include('apps.facturadetallle.urls')),
     url(r'^solicitudmantenimiento/',include('apps.solicitudmantenimiento.urls')),
+    url(r'^mantenimiento/',include('apps.mantenimiento.urls')),
 
 
 

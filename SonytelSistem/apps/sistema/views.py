@@ -33,7 +33,7 @@ class index(TemplateView):
 #CREAR CLIENTE
 class registrarCliente(CreateView):
 	#registrarcliente"
-	template_name='cliente/insertarmodal.html'
+	template_name='cliente/registrarcliente.html'
 	model=Clientes
 	success_url=reverse_lazy('home')
 #LISTAR CLIENTE

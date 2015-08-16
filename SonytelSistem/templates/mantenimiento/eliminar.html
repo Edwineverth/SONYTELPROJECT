@@ -12,7 +12,8 @@
 <div class="alert alert-info" role="alert"><h1>ELIMINAR SOLICITUD</h1></div>
  
 	<Form  action = ""  method = "post" > {%  csrf_token  %} 
-    <p> ¿Seguro que quieres eliminar " {{  Solicitudmantenimiento  }} "? </p> 
+    <p> ¿Seguro que quieres eliminar " {{  Solicitudmantenimiento.solm_falla  }} del {{  Solicitudmantenimiento.solm_fecha  }} "? </p> 
+	 
     <input  type = "submit"  value = "Confirmar "  /> 
 	</form>
 

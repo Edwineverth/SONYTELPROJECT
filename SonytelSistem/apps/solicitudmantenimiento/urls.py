@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^editar/(?P<pk>[\d]+)$', editarSolicitudmantenimiento.as_view(),name='editarMantenimiento'),
     url(r'^eliminar/(?P<pk>[\d]+)$', eliminarSolicitudmantenimiento.as_view(),name='eliminarMantenimiento'),
     url(r'^listar/$', listarSolicitudmantenimiento.as_view(),name='listarMantenimiento'),
+    url(r'^espera/$', listarSolicitudmantenimientoespera.as_view(),name='listarMantenimientoespera'),
     url(r'^crear/$', crearMantenimiento,name='registrarMantenimiento'),
     url(r'^guardar/$', guardarMantenimiento,name='guardarMantenimiento'),
 

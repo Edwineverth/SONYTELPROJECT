@@ -17,9 +17,10 @@ class Articulossegunda(models.Model):
     art_precio = models.FloatField(verbose_name=u"Precio:")
     art_cantidad = models.IntegerField(verbose_name=u"Cantidad")
     art_serie = models.CharField(max_length=50,verbose_name=u"Serie")
-    mar = models.ForeignKey('Categoria', blank=True, null=True,verbose_name=u"Marca")
+    mar = models.ForeignKey('Categoria', blank=True, null=True,verbose_name=u"Marca",db_index=True,editable=True)
     mod = models.ForeignKey('Modelo', blank=True, null=True,verbose_name=u"Modelo")
-    art_estado = models.CharField(max_length=1,verbose_name=u"Estado")
+    art_estado = models.CharField(default='D',editable=False,max_length=1,verbose_name=u"Estado")
+
     def __unicode__(self):
         return self.art_nombre
 
@@ -182,5 +183,6 @@ class Solicitudmantenimiento(models.Model):
     solm_estado = models.CharField(max_length=1, blank=True,verbose_name=u"Estado")
     art = models.ForeignKey(Articulossegunda)
     cli = models.ForeignKey(Clientes, blank=True, null=True)
+    
 
    

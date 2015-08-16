@@ -7,6 +7,10 @@ from django.core import serializers
 
 
 # Create your views here.
+
+
+
+
 class crearArticulo(CreateView):
 	template_name='articulos/reportar.html'
 	model=Articulossegunda
