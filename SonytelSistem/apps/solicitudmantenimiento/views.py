@@ -31,8 +31,19 @@ class listarSolicitudmantenimientoespera(ListView):
 		ctx = super(listarSolicitudmantenimientoespera, self).get_context_data(**kwargs)
 		ctx['clientes'] = Clientes.objects.all()
 		ctx['articulos'] = Articulossegunda.objects.all()
-		
 		return ctx
+
+class listadoatendido(ListView):
+	template_name='mantenimiento/atentida.html'
+	context_object_name='Solicitudmantenimiento'
+	model=Solicitudmantenimiento
+	def get_context_data(self, **kwargs):
+		ctx = super(listadoatendido, self).get_context_data(**kwargs)
+		ctx['clientes'] = Clientes.objects.all()
+		ctx['articulos'] = Articulossegunda.objects.all()
+		return ctx
+
+
 #ACTUALIZAR ARTICULOS
 class editarSolicitudmantenimiento(UpdateView):
 	model = Solicitudmantenimiento

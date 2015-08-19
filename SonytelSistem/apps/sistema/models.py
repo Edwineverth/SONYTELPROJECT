@@ -101,6 +101,10 @@ class Mantenimiento(models.Model):
     man_estado = models.CharField(max_length=1, blank=True)
     solm = models.ForeignKey('Solicitudmantenimiento')
 
+    def __unicode__(self):
+        return "%s %s" %(self.man_informe,self.man_informe)
+
+
 
 
 class Mensajeria(models.Model):

@@ -29,7 +29,7 @@ class TestFormView(SuccessMessageMixin, AjaxTemplateMixin, FormView):
     
 # Create your views here.
 class index(TemplateView):
-	template_name='inicio/index.html'
+	template_name='index.html'
 #CREAR CLIENTE
 class registrarCliente(CreateView):
 	#registrarcliente"

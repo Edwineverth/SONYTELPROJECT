@@ -1,10 +1,11 @@
 
+
 {% extends "base.html" %}
 {% block content %}
-<div class="alert alert-info" role="alert"><H1>SOLICITUDES DE MANTENIMIENTO</H1> </div>
+<h1>LISTADO DE MANTENIMIENTOS</h1>
 <span class="label label-default">Buscar</span>
 <div class="well">
-  <p>REGISTRO DE SOLICITUDES DE MANTENIMIENTO EMITIDAS </p>
+  <p>Registro de facturas emitidas </p>
     <form method="POST" action="/cliente/buscar/">{% csrf_token %}
 		 <div class="col-lg-6" >
 		      <div class="input-group">
@@ -21,8 +22,7 @@
     <br/>
     </br>
     <br/>
-    </br>
-    <br/>
+   
 	<div class="table-responsive">
 		<table class="table table-hover">
 	        <thead>
@@ -39,14 +39,12 @@
 	            <td class="success">CLIENTE</td>
 	             <td class="success">------</td>
 	              <td class="success">-----</td>
-
-	           
+	            
 	          </tr>
 	        </thead>
 	        <tbody >
 	   
 	         
-	          <!-- Aplicadas en las celdas (<td> o <th>) -->
 		          {% for solmant in  Solicitudmantenimiento %}
 			          <tr>
 			          	<td >{{solmant.id}}</td>
@@ -83,7 +81,10 @@
 			            <td ><button class='btn btn-success' id="btndelete" value="{{solmant.id}}" onclick='eliminarDatos({{solmant.id}})'><span class="glyphicon glyphicon-remove"></i></button></td>
 
 			          </tr>
-		          {% endfor %}
+		          {% endfor %}      
+			          	
+			           
+			        
 	      	</tbody>
 		</table>
 	</div>
@@ -106,5 +107,8 @@
 
 	}
 	</script>
+	
 
 {% endblock js %}
+
+

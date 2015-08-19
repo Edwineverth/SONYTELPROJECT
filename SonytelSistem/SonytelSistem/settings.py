@@ -98,6 +98,11 @@ MEDIA_ROOT =RUTA_PROYECTO.child('media')
 MEDIA_URL='http://127.0.0.1:8000/media/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
+from django.core.urlresolvers import reverse_lazy
+LOGIN_URL=reverse_lazy('login')
+LOGIN_REDIRECT_URL= reverse_lazy('sistema')
+LOGOUT_UTL=reverse_lazy('logout')
+
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS=(

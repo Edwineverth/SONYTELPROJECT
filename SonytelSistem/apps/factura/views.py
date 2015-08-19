@@ -34,6 +34,7 @@ def guardarFactura(request):
 	precio = (request.GET['precio'])
 	cedula = request.GET['cedula']
 	total =request.GET['total']
+	num = request.GET['numero']
 	print "SIGEEEE"
 	print cedula
 	listarClientes = Clientes.objects.get(cli_cedula=cedula)
@@ -46,7 +47,7 @@ def guardarFactura(request):
 	print request.GET['nFactura']
 	print f
 
-	if f ==0:
+	if str(num) =='1':
 		fact = Factura(fac_subtotal=request.GET['subtotal'],
 			fac_iva=request.GET['iva'],
 			fac_descuento=request.GET['descuento'],

@@ -158,7 +158,7 @@
         document.getElementById('fecha').value=(f.getFullYear() + "-" + (f.getMonth() +1) + "-" + f.getDate());
         var fecha = (f.getFullYear() + "-" + (f.getMonth() +2) + "-" + f.getDate());
 
-        $("#guardar").click(function(){
+    $("#guardar").click(function(){
         var tabla = document.getElementById('factura');
         if (tabla.rows.length > 1){
             for (var i=1; tabla.rows[i];i++)

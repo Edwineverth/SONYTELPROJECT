@@ -4,7 +4,7 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'SonytelSistem.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-    url(r'^$', index.as_view(),name='home'),
+    url(r'^sistema/$', index.as_view(),name='sistema'),
     url(r'^registrar/$', registrarCliente.as_view(),name='registrar_cliente'),
     url(r'^listado/$', listarCliente.as_view(),name='listar_cliente'),
     url(r'^filtrar/$', filtrarCliente.as_view(),name='buscar_cliente'),

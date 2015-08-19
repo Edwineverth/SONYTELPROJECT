@@ -10,20 +10,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/sl-slide.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}principal/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}principal/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}principal/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}principal/css/main.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}principal/css/sl-slide.css">
 
-    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="{{ STATIC_URL }}principal/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="{{ STATIC_URL }}principal/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ STATIC_URL }}principal/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ STATIC_URL }}principal/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ STATIC_URL }}principal/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}principal/images/ico/apple-touch-icon-57-precomposed.png">
 </head>
 
 <body>
@@ -82,7 +82,7 @@
             <div class="sl-slide item1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
                 <div class="sl-slide-inner">
                     <div class="container">
-                        <img class="pull-right" src="images/sample/slider/img1.png" alt="" />
+                        <img class="pull-right" src="{{ STATIC_URL }}principal/images/sample/slider/img1.png" alt="" />
                         <h2>Creative Ideas</h2>
                         <h3 class="gap">Tincidunt condimentum eros</h3>
                         <a class="btn btn-large btn-transparent" href="#">Learn More</a>
@@ -95,7 +95,7 @@
             <div class="sl-slide item2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
                 <div class="sl-slide-inner">
                     <div class="container">
-                        <img class="pull-right" src="images/sample/slider/img2.png" alt="" />
+                        <img class="pull-right" src="{{ STATIC_URL }}principal/images/sample/slider/img2.png" alt="" />
                         <h2>Planning &amp; Analysis</h2>
                         <h3 class="gap">Aenean ultricies mi vitast</h3>
                         <a class="btn btn-large btn-transparent" href="#">Learn More</a>
@@ -108,7 +108,7 @@
             <div class="sl-slide item3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
                 <div class="sl-slide-inner">
                    <div class="container">
-                    <img class="pull-right" src="images/sample/slider/img3.png" alt="" />
+                    <img class="pull-right" src="{{ STATIC_URL }}principal/images/sample/slider/img3.png" alt="" />
                     <h2>Unique Solutions</h2>
                     <h3 class="gap">Breatures who have been utterly</h3>
                     <a class="btn btn-large btn-transparent" href="#">Learn More</a>
@@ -208,7 +208,7 @@
             <!--Item 1-->
             <li>
                 <div class="preview">
-                    <img alt=" " src="images/portfolio/thumb/item1.jpg">
+                    <img alt=" " src="{{ STATIC_URL }}principal/images/portfolio/thumb/item1.jpg">
                     <div class="overlay">
                     </div>
                     <div class="links">
@@ -221,7 +221,7 @@
                 <div id="modal-1" class="modal hide fade">
                     <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
                     <div class="modal-body">
-                        <img src="images/portfolio/full/item1.jpg" alt=" " width="100%" style="max-height:400px">
+                        <img src="{{ STATIC_URL }}principal/images/portfolio/full/item1.jpg" alt=" " width="100%" style="max-height:400px">
                     </div>
                 </div>                 
             </li>
@@ -230,7 +230,7 @@
             <!--Item 2-->
             <li>
                 <div class="preview">
-                    <img alt=" " src="images/portfolio/thumb/item2.jpg">
+                    <img alt=" " src="{{ STATIC_URL }}principal/images/portfolio/thumb/item2.jpg">
                     <div class="overlay">
                     </div>
                     <div class="links">
@@ -243,7 +243,7 @@
                 <div id="modal-1" class="modal hide fade">
                     <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
                     <div class="modal-body">
-                        <img src="images/portfolio/full/item2.jpg" alt=" " width="100%" style="max-height:400px">
+                        <img src="{{ STATIC_URL }}principal/images/portfolio/full/item2.jpg" alt=" " width="100%" style="max-height:400px">
                     </div>
                 </div>                 
             </li>
@@ -252,7 +252,7 @@
             <!--Item 3-->
             <li>
                 <div class="preview">
-                    <img alt=" " src="images/portfolio/thumb/item3.jpg">
+                    <img alt=" " src="{{ STATIC_URL }}principal/images/portfolio/thumb/item3.jpg">
                     <div class="overlay">
                     </div>
                     <div class="links">
@@ -265,7 +265,7 @@
                 <div id="modal-3" class="modal hide fade">
                     <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
                     <div class="modal-body">
-                        <img src="images/portfolio/full/item3.jpg" alt=" " width="100%" style="max-height:400px">
+                        <img src="{{ STATIC_URL }}principal/images/portfolio/full/item3.jpg" alt=" " width="100%" style="max-height:400px">
                     </div>
                 </div>                 
             </li>
@@ -274,7 +274,7 @@
             <!--Item 4-->
             <li>
                 <div class="preview">
-                    <img alt=" " src="images/portfolio/thumb/item4.jpg">
+                    <img alt=" " src="{{ STATIC_URL }}principal/images/portfolio/thumb/item4.jpg">
                     <div class="overlay">
                     </div>
                     <div class="links">
@@ -287,7 +287,7 @@
                 <div id="modal-4" class="modal hide fade">
                     <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
                     <div class="modal-body">
-                        <img src="images/portfolio/full/item4.jpg" alt=" " width="100%" style="max-height:400px">
+                        <img src="{{ STATIC_URL }}principal/images/portfolio/full/item4.jpg" alt=" " width="100%" style="max-height:400px">
                     </div>
                 </div>                 
             </li>
@@ -317,10 +317,10 @@
                     <div class="active item">
                         <div class="row-fluid">
                             <ul class="thumbnails">
-                                <li class="span3"><a href="#"><img src="images/sample/clients/client1.png"></a></li>
-                                <li class="span3"><a href="#"><img src="images/sample/clients/client2.png"></a></li>
-                                <li class="span3"><a href="#"><img src="images/sample/clients/client3.png"></a></li>
-                                <li class="span3"><a href="#"><img src="images/sample/clients/client4.png"></a></li>
+                                <li class="span3"><a href="#"><img src="{{ STATIC_URL }}principal/images/sample/clients/client1.png"></a></li>
+                                <li class="span3"><a href="#"><img src="{{ STATIC_URL }}principal/images/sample/clients/client2.png"></a></li>
+                                <li class="span3"><a href="#"><img src="{{ STATIC_URL }}principal/images/sample/clients/client3.png"></a></li>
+                                <li class="span3"><a href="#"><img src="{{ STATIC_URL }}principal/images/sample/clients/client4.png"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -328,10 +328,10 @@
                     <div class="item">
                         <div class="row-fluid">
                             <ul class="thumbnails">
-                                <li class="span3"><a href="#"><img src="images/sample/clients/client4.png"></a></li>
-                                <li class="span3"><a href="#"><img src="images/sample/clients/client3.png"></a></li>
-                                <li class="span3"><a href="#"><img src="images/sample/clients/client2.png"></a></li>
-                                <li class="span3"><a href="#"><img src="images/sample/clients/client1.png"></a></li>
+                                <li class="span3"><a href="#"><img src="{{ STATIC_URL }}principal/images/sample/clients/client4.png"></a></li>
+                                <li class="span3"><a href="#"><img src="{{ STATIC_URL }}principal/images/sample/clients/client3.png"></a></li>
+                                <li class="span3"><a href="#"><img src="{{ STATIC_URL }}principal/images/sample/clients/client2.png"></a></li>
+                                <li class="span3"><a href="#"><img src="{{ STATIC_URL }}principal/images/sample/clients/client1.png"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -339,10 +339,10 @@
                     <div class="item">
                         <div class="row-fluid">
                             <ul class="thumbnails">
-                                <li class="span3"><a href="#"><img src="images/sample/clients/client1.png"></a></li>
-                                <li class="span3"><a href="#"><img src="images/sample/clients/client2.png"></a></li>
-                                <li class="span3"><a href="#"><img src="images/sample/clients/client3.png"></a></li>
-                                <li class="span3"><a href="#"><img src="images/sample/clients/client4.png"></a></li>
+                                <li class="span3"><a href="#"><img src="{{ STATIC_URL }}principal/images/sample/clients/client1.png"></a></li>
+                                <li class="span3"><a href="#"><img src="{{ STATIC_URL }}principal/images/sample/clients/client2.png"></a></li>
+                                <li class="span3"><a href="#"><img src="{{ STATIC_URL }}principal/images/sample/clients/client3.png"></a></li>
+                                <li class="span3"><a href="#"><img src="{{ STATIC_URL }}principal/images/sample/clients/client4.png"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -508,9 +508,9 @@
     </div>
     <!--Modal Body-->
     <div class="modal-body">
-        <form class="form-inline" action="index.html" method="post" id="form-login">
-            <input type="text" class="input-small" placeholder="Email">
-            <input type="password" class="input-small" placeholder="Password">
+        <form class="form-inline"  method="POST" id="form-login">{% csrf_token %}
+            <input type="text" name="username" class="input-small" placeholder="Email">
+            <input type="password" name="password" class="input-small" placeholder="Password">
             <label class="checkbox">
                 <input type="checkbox"> Remember me
             </label>
@@ -522,12 +522,12 @@
 </div>
 <!--  /Login form -->
 
-<script src="js/vendor/jquery-1.9.1.min.js"></script>
-<script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
+<script src="{{ STATIC_URL }}principal/js/vendor/jquery-1.9.1.min.js"></script>
+<script src="{{ STATIC_URL }}principal/js/vendor/bootstrap.min.js"></script>
+<script src="{{ STATIC_URL }}principal/js/main.js"></script>
 <!-- Required javascript files for Slider -->
-<script src="js/jquery.ba-cond.min.js"></script>
-<script src="js/jquery.slitslider.js"></script>
+<script src="{{ STATIC_URL }}principal/js/jquery.ba-cond.min.js"></script>
+<script src="{{ STATIC_URL }}principal/js/jquery.slitslider.js"></script>
 <!-- /Required javascript files for Slider -->
 
 <!-- SL Slider -->
