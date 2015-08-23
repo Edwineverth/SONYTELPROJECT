@@ -12,6 +12,8 @@ class Articulossegunda(models.Model):
     mar = models.ForeignKey('Categoria', blank=True, null=True,verbose_name=u"Marca",db_index=True,editable=True)
     mod = models.ForeignKey('Modelo', blank=True, null=True,verbose_name=u"Modelo")
     art_estado = models.CharField(default='D',editable=False,max_length=1,verbose_name=u"Estado")
+    class Meta:
+        ordering = ["id"]
 
     def __unicode__(self):
         return self.art_nombre
@@ -22,6 +24,8 @@ class Articulossegunda(models.Model):
 class Categoria(models.Model):
     mar_nombre = models.CharField(max_length=30)
     mar_descripcion = models.CharField(max_length=75)
+    class Meta:
+        ordering = ["id"]
     def __unicode__(self):
         return self.mar_nombre
 
@@ -31,6 +35,8 @@ class Ciudad(models.Model):
    
     ciu_nombre = models.CharField(max_length=30)
     ciu_descripcion = models.CharField(max_length=70)
+    class Meta:
+        ordering = ["id"]
     def __unicode__(self):
 		return self.ciu_nombre
 
@@ -44,6 +50,8 @@ class Clientes(models.Model):
     cli_email = models.CharField(max_length=75)
     cli_estado = models.CharField(max_length=1)
     ciu = models.ForeignKey(Ciudad, blank=True, null=True)
+    class Meta:
+        ordering = ["id"]
     def __unicode__(self):
 		return self.cli_nombre
   
@@ -65,6 +73,8 @@ class Factura(models.Model):
     fac_fecha = models.DateField()
     fac_estado = models.CharField(max_length=1)
     cli = models.ForeignKey(Clientes, blank=True, null=True)
+    class Meta:
+        ordering = ["id"]
 
  
 
@@ -74,6 +84,8 @@ class Facturadetalle(models.Model):
     det_cantiadd = models.IntegerField()
     det_preciou = models.FloatField()
     det_preciot = models.FloatField()
+    class Meta:
+        ordering = ["id"]
 
 
 class Facturadetallemantenimiento(models.Model):
@@ -81,6 +93,8 @@ class Facturadetallemantenimiento(models.Model):
     solm = models.ForeignKey('Solicitudmantenimiento')
     fad_preciou = models.FloatField()
     fad_preciot = models.FloatField()
+    class Meta:
+        ordering = ["id"]
 
 
 class Mantenimiento(models.Model):
@@ -92,6 +106,8 @@ class Mantenimiento(models.Model):
     man_fechaentrega = models.DateField()
     man_estado = models.CharField(max_length=1, blank=True)
     solm = models.ForeignKey('Solicitudmantenimiento')
+    class Meta:
+        ordering = ["id"]
 
     def __unicode__(self):
         return "%s %s" %(self.man_informe,self.man_informe)
@@ -104,6 +120,8 @@ class Mensajeria(models.Model):
     men_asunto = models.CharField(max_length=30)
     men_descripcion = models.CharField(max_length=500)
     cli = models.ForeignKey(Clientes)
+    class Meta:
+        ordering = ["id"]
     def __unicode__(self):
         return self.men_asunto
 
@@ -114,6 +132,8 @@ class Modelo(models.Model):
    
     mod_nombre = models.CharField(max_length=30)
     mod_descripcion = models.CharField(max_length=75)
+    class Meta:
+        ordering = ["id"]
     def __unicode__(self):
         return self.mod_nombre
 
@@ -129,6 +149,8 @@ class OrdenDeCompra(models.Model):
     ord_fecha = models.DateField()
     prov = models.ForeignKey('Proveedor')
     ord_estado = models.CharField(max_length=1)
+    class Meta:
+        ordering = ["id"]
 
    
 
@@ -142,8 +164,10 @@ class Productos(models.Model):
     pro_ex = models.IntegerField(verbose_name=u"Nombre:")
     pro_pvp = models.FloatField(verbose_name=u"Nombre:")
     mar = models.ForeignKey(Categoria, blank=True, null=True,verbose_name=u"Nombre:")
+    class Meta:
+        ordering = ["id"]
     def __unicode__(self):
-        return self.pro_nombre
+        return self.pro_nombre    
 
    
 
@@ -157,6 +181,8 @@ class Proveedor(models.Model):
     prov_telefono = models.CharField(max_length=10, blank=True,verbose_name=u"TELEFONO")
     ciu = models.ForeignKey(Ciudad, blank=True, null=True,verbose_name=u"CIUDAD")
     prov_estado = models.CharField(max_length=1, blank=True,verbose_name=u"ESTADO")
+    class Meta:
+        ordering = ["id"]
 
 
 
@@ -165,6 +191,8 @@ class Repuestos(models.Model):
     man = models.ForeignKey(Mantenimiento)
     pro = models.ForeignKey(Productos)
     rep_cantidad = models.IntegerField()
+    class Meta:
+        ordering = ["id"]
 
  
 
@@ -179,6 +207,8 @@ class Solicitudmantenimiento(models.Model):
     solm_estado = models.CharField(max_length=1, blank=True,verbose_name=u"Estado")
     art = models.ForeignKey(Articulossegunda)
     cli = models.ForeignKey(Clientes, blank=True, null=True)
+    class Meta:
+        ordering = ["id"]
     
 
    

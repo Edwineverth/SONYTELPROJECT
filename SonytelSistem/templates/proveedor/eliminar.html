@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-	HOLA MUNDO :v
+	<div class="alert alert-success" role="alert"><h1>ELIMINAR PROVEEDOR</h1></div>
  
 	<Form  action = ""  method = "post" > {%  csrf_token  %} 
     <p> ¿Seguro que quieres eliminar " {{  Proveedores  }} "? </p> 
-    <input  type = "submit"  value = "Confirmar "  /> 
+    <button type="submit" class="btn btn-primary">CONFIRMAR</button>
+    
 	</form>
 
 {% endblock content %}

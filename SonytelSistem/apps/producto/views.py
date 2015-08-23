@@ -36,6 +36,6 @@ class eliminarProducto(DeleteView):
 class filtrarAjaxProducto(TemplateView):
 	def get(self,request,*args,**kwargs):
 		nombreProducto = request.GET.get('nombre')
-		cliente = Productos.objects.filter(Q(pro_nombre__contains =nombreProducto)|Q(pro_ecg__contains=nombreProducto))
+		cliente = Productos.objects.filter(Q(pro_nombre__contains =nombreProducto)|Q(pro_ecg__contains=nombreProducto)).order_by("id")
 		data = serializers.serialize('json',cliente,fields=('id','pro_nombre','pro_cantidad','pro_precio','pro_ecg','pro_tarifa_iva','pro_ex','pro_pvp','mar_id'))
 		return HttpResponse(data,content_type='application/json')
