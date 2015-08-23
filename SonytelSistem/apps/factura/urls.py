@@ -7,7 +7,7 @@ urlpatterns = patterns('',
     
     url(r'^crear/$', generarVentaFactura,name='crearFactura'),
     url(r'^crearr/$', guardarFactura,name='crearFacturad'),
-    url(r'^listado/$', listarFacturas.as_view(),name='registrar_cliente'),
+    url(r'^listado/$', listarFacturas.as_view(),name='listarFacturas'),
 
    
     

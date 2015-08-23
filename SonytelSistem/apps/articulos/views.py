@@ -10,7 +10,6 @@ from django.core import serializers
 
 
 
-
 class crearArticulo(CreateView):
 	template_name='articulos/reportar.html'
 	model=Articulossegunda

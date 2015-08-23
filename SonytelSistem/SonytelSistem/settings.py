@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'apps.facturadetallle',
     'apps.mantenimiento',
     'bootstrap3',
+    'table',
 
 )
 CRISPY_TEMPLATE_PACK = 'bootstrap3'

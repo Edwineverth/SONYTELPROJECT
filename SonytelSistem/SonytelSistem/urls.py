@@ -21,6 +21,7 @@ urlpatterns = patterns('',
     url(r'^facturadetalle/',include('apps.facturadetallle.urls')),
     url(r'^solicitudmantenimiento/',include('apps.solicitudmantenimiento.urls')),
     url(r'^mantenimiento/',include('apps.mantenimiento.urls')),
+    url(r'^productos/',include('apps.producto.urls')),
 
 
 

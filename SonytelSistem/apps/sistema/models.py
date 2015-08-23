@@ -1,12 +1,4 @@
-# This is an auto-generated Django model module.
-# You'll have to do the following manually to clean this up:
-#   * Rearrange models' order
-#   * Make sure each model has one field with primary_key=True
-#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
-# Feel free to rename the models, but don't rename db_table values or field names.
-#
-# Also note: You'll have to insert the output of 'django-admin.py sqlcustom [app_label]'
-# into your database.
+# -*- coding: utf-8 -*e
 from __future__ import unicode_literals
 
 from django.db import models
@@ -142,14 +134,14 @@ class OrdenDeCompra(models.Model):
 
 class Productos(models.Model):
    
-    pro_nombre = models.CharField(max_length=30)
-    pro_cantidad = models.IntegerField()
-    pro_precio = models.FloatField()
-    pro_ecg = models.CharField(max_length=75, blank=True)
-    pro_tarifa_iva = models.FloatField()
-    pro_ex = models.IntegerField()
-    pro_pvp = models.FloatField()
-    mar = models.ForeignKey(Categoria, blank=True, null=True)
+    pro_nombre = models.CharField(max_length=30,verbose_name=u"Nombre:")
+    pro_cantidad = models.IntegerField(verbose_name=u"Nombre:")
+    pro_precio = models.FloatField(verbose_name=u"Nombre:")
+    pro_ecg = models.CharField(max_length=75, blank=True,verbose_name=u"Nombre:")
+    pro_tarifa_iva = models.FloatField(verbose_name=u"Nombre:")
+    pro_ex = models.IntegerField(verbose_name=u"Nombre:")
+    pro_pvp = models.FloatField(verbose_name=u"Nombre:")
+    mar = models.ForeignKey(Categoria, blank=True, null=True,verbose_name=u"Nombre:")
     def __unicode__(self):
         return self.pro_nombre
 
@@ -157,14 +149,14 @@ class Productos(models.Model):
 
 class Proveedor(models.Model):
    
-    prov_ruc = models.CharField(max_length=10)
-    prov_cedula = models.CharField(max_length=10)
-    prov_nombre = models.CharField(max_length=30)
-    prov_representante = models.CharField(max_length=50)
-    prov_direccion = models.CharField(max_length=80)
-    prov_telefono = models.CharField(max_length=10, blank=True)
-    ciu = models.ForeignKey(Ciudad, blank=True, null=True)
-    prov_estado = models.CharField(max_length=1, blank=True)
+    prov_ruc = models.CharField(max_length=10,verbose_name=u"RUC")
+    prov_cedula = models.CharField(max_length=10,verbose_name=u"CEDULA")
+    prov_nombre = models.CharField(max_length=30,verbose_name=u"NOMBRE")
+    prov_representante = models.CharField(max_length=50,verbose_name=u"REPRESENTANTE")
+    prov_direccion = models.CharField(max_length=80,verbose_name=u"DIRECCIÓN")
+    prov_telefono = models.CharField(max_length=10, blank=True,verbose_name=u"TELEFONO")
+    ciu = models.ForeignKey(Ciudad, blank=True, null=True,verbose_name=u"CIUDAD")
+    prov_estado = models.CharField(max_length=1, blank=True,verbose_name=u"ESTADO")
 
 
 

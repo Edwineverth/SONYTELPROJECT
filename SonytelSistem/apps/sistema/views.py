@@ -23,7 +23,7 @@ class TestFormView(SuccessMessageMixin, AjaxTemplateMixin, FormView):
     template_name = 'cliente/test_form.html'
     form_class = TestForm
     
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('login')
     success_message = "Way to go!"
     
     
@@ -35,7 +35,7 @@ class registrarCliente(CreateView):
 	#registrarcliente"
 	template_name='cliente/registrarcliente.html'
 	model=Clientes
-	success_url=reverse_lazy('home')
+	success_url=reverse_lazy('login')
 #LISTAR CLIENTE
 class listarCliente(ListView):
 	template_name='cliente/reportarcliente.html'
@@ -55,6 +55,7 @@ class eliminar(DeleteView):
 #FILTRAR CLIENTE
 class filtrarCliente(TemplateView):
 	template_name='cliente/filtrar.html'
+#
 #RETORNO AJAX FILTRADO
 class filtrarAjaxcliente(TemplateView):
 	def get(self,request,*args,**kwargs):
