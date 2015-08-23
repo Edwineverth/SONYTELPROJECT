@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="alert alert-success" role="alert"><h1>ELIMINAR PRODUCTO</h1></div>
+ 
+	<Form  action = ""  method = "post" > {%  csrf_token  %} 
+    <p> ¿Seguro que quieres eliminar " {{  productos  }} "? </p> 
+    <input  type = "submit"  value = "Confirmar "  /> 
+	</form>
+
+{% endblock content %}
