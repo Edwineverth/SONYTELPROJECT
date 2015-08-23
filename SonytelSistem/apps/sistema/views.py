@@ -1,10 +1,12 @@
 from django.shortcuts import render
-from .models import Clientes,Ciudad
+from .models import Clientes,Ciudad,Productos
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import TemplateView,CreateView,ListView,UpdateView,DeleteView,FormView
 from django.http import HttpResponse
 from django.core import serializers	
 from django.contrib.messages.views import SuccessMessageMixin
+from django.shortcuts import render, redirect, render_to_response, RequestContext, HttpResponse, HttpResponseRedirect
+
 import json
 from .forms import TestForm
 class AjaxTemplateMixin(object):
@@ -28,8 +30,18 @@ class TestFormView(SuccessMessageMixin, AjaxTemplateMixin, FormView):
     
     
 # Create your views here.
+
+				
+def presentacionsistema(request):
+
+	objetosplantilla = {'productos': Productos.objects.all() }
+	return render_to_response('index.html', objetosplantilla, context_instance=RequestContext(request))
+
 class index(TemplateView):
 	template_name='index.html'
+	model = Productos
+	context_object_name = "Productos"
+
 #CREAR CLIENTE
 class registrarCliente(CreateView):
 	#registrarcliente"

@@ -96,6 +96,9 @@
 {% endblock content %}
 {% block js %} 
 <script >
+    window.onload=function(){
+        alert("D:")
+      }
 		 var f = new Date();
         document.getElementById('txtfecha').value=(f.getFullYear() + "-" + (f.getMonth() +1) + "-" + f.getDate());
         var fecha = (f.getFullYear() + "-" + (f.getMonth() +2) + "-" + f.getDate());
