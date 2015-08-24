@@ -36,6 +36,8 @@
   
             <li class="divider"></li>
             <li><a href="/proveedor/listar"><span class="glyphicon glyphicon-user"> GESTIONAR PROVEEDORES</a></li>
+            <li class="divider"></li>
+            <li><a href="/categoria/filtrar"><span class="glyphicon glyphicon-tag"> GESTIONAR CATEGORIA-MARCAS</a></li>
             
           </ul>
        
@@ -48,19 +50,15 @@
             <li><a href="/factura/listado"><span class="glyphicon glyphicon-list-alt"> LISTAR FACTURAS</a></li>
           
             <li class="divider"></li>
-            <li><a href="/cliente/registrar">REGISTRAR CLIENTE</a></li>
-            <li><a href="/cliente/filtrar">LISTADO CLIENTES</a></li>
-            <li class="divider"></li>
-            <li><a href="#">CREAR PRODUCTO</a></li>
-            <li><a href="#">LISTADO DE PRODUCTOS</a></li>
-            <li><a href="/categoria/registrar">CREAR CATEGORIA/MARCAS</a></li>
+            
+            <li><a href="/cliente/listado"><span class="glyphicon glyphicon-tags"> GESTIONAR CLIENTES</a></li>    
+            
           </ul>
        
         </li>
          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MANTENIMIENTO</a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="/articulos/registrar">REGISTRAR ARTICULO</a></li>
-            <li><a href="Mision.html">LISTAR ARTICULOS</a></li>
+            <li><a href="/articulos/listar"><span class="glyphicon glyphicon-cog"> GESTIONAR ARTÍCULO</a></li>
             <li class="divider"></li>
             <li><a href="Vision.html">REGISTRO DE MANTENIMIENTO</a></li>
             <li><a href="Vision.html">LISTADO DE MANTENIMIENTOS</a></li>
@@ -170,7 +168,7 @@
         </div>
         <div class="modal-body">
           <h5>Los siguientes productos estan agotados:</h5>
-          {% for producto  in productos %}
+          {% for producto  in productoslista %}
             {% if producto.pro_cantidad < producto.pro_ex %}
                <p>{{producto.id}}: {{producto.pro_nombre}} | Cantidad: {{producto.pro_cantidad}}</p>
             {% endif %}
@@ -213,7 +211,7 @@
     
   window.onload=function(){
         var stock = 0
-        {% for producto  in productos %}
+        {% for producto  in productoslista %}
             {% if producto.pro_cantidad < producto.pro_ex %}
                stock += 1
                console.log(stock)

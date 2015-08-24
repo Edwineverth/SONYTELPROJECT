@@ -14,7 +14,7 @@ class crearCategoria(CreateView):
 
 #LISTAR ARTICULOS
 class listarCategoria(ListView):
-	template_name='categoria/editar.html'
+	template_name='categoria/filtrar.html'
 	context_object_name='categorias'
 	model=Categoria
 #ACTUALIZAR ARTICULOS
