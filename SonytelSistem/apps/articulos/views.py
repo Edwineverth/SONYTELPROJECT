@@ -8,7 +8,7 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from django.db.models import Q
 
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
@@ -19,6 +19,7 @@ class crearArticulo(CreateView):
 	success_url=reverse_lazy('sistema')
 
 #LISTAR ARTICULOSs
+#@login_required
 class listarArticulos(ListView):
 	template_name='articulos/listar.html'
 	context_object_name='articulos'
@@ -29,11 +30,13 @@ class listarArticulos(ListView):
 		ctx['modelos'] = Modelo.objects.all()
 		return ctx
 #ACTUALIZAR ARTICULOS
+#@login_required
 class editarArticulo(UpdateView):
 	model = Articulossegunda
 	template_name= 'articulos/actualizar.html'
 	success_url=reverse_lazy('sistema')
 #ELIMINAR ARTICULOS
+#@login_required
 class eliminarArticulo(DeleteView):
 	model = Articulossegunda
 	context_object_name="articulos"

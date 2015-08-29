@@ -72,17 +72,18 @@
             <li><a href="/solicitudmantenimiento/atendida/"><span class="glyphicon glyphicon-pawn"> SOLICITUDES ATENDIDAS</a></li>
             <li class="divider"></li>
             <li><a href="/modelo/listar"><span class="glyphicon glyphicon-qrcode"> GESTIONAR MODELOS</a></li>
+            <li class="divider"></li>
+            <li><a href="/mensajeria/filtrar"><span class="glyphicon glyphicon-envelope"> GESTIONAR MENSAJERIAS</a></li>
             
           </ul>
         
         </li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
-        
+        <li><a >  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user"> Bienvenido {{user.username}}</a></li>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        
-       
+       <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-remove-sign"> CERRAR SESIÓN</a></li>
       </ul>
     </div>
     <!-- /.navbar-collapse -->

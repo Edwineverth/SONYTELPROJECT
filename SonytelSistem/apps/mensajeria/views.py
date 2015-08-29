@@ -10,7 +10,7 @@ from django.db.models import Q
 class crearMensajeria(CreateView):
 	template_name='mensajeria/crear.html'
 	model=Mensajeria
-	success_url=reverse_lazy('home')
+	success_url=reverse_lazy('sistema')
 
 #LISTAR ARTICULOS
 class listarMensajeria(ListView):
@@ -21,16 +21,18 @@ class listarMensajeria(ListView):
 class editarMensajeria(UpdateView):
 	model = Mensajeria
 	template_name= 'mensajeria/editar.html'
-	success_url=reverse_lazy('home')
+	success_url=reverse_lazy('sistema')
 #ELIMINAR ARTICULOS
 class eliminarMensajeria(DeleteView):
 	model = Mensajeria
 	context_object_name="mensajeria"
 	template_name = 'mensajeria/eliminar.html'
-	success_url = reverse_lazy('home')
+	success_url = reverse_lazy('sistema')
 
 #FILTRADO DE Mensajeria *****
-class filtrarMensajeria(TemplateView):
+class filtrarMensajeria(ListView):
+	model = Mensajeria
+	context_object_name = "mensajerias"
 	template_name='mensajeria/filtrar.html'
 
 

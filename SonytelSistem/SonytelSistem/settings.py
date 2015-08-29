@@ -102,7 +102,7 @@ MEDIA_URL='http://127.0.0.1:8000/media/'
 from django.core.urlresolvers import reverse_lazy
 LOGIN_URL=reverse_lazy('login')
 LOGIN_REDIRECT_URL= reverse_lazy('sistema')
-LOGOUT_UTL=reverse_lazy('logout')
+LOGOUT_URL=reverse_lazy('logout')
 
 
 STATIC_URL = '/static/'

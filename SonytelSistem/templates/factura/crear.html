@@ -14,19 +14,19 @@
         <div class="col-md-6"><input type="text"  id="txtcedula" class="form-control" placeholder="CEDULA"></div>
         <span class="input-group-btn"><button class="btn btn-primary" type="button" value="Buscar" onclick="javascript:buscarCliente()">BUSCAR</button></span>
         <div class="col-md-6">NOMBRE</div>
-        <div class="col-md-6"><input type="text"  id="txtnombre" class="form-control" placeholder="NOMBRE"></div>
+        <div class="col-md-6"><input type="text"  id="txtnombre" class="form-control" readonly placeholder="NOMBRE"></div>
         <div class="col-md-6">APELLIDO</div>
-        <div class="col-md-6"><input type="text" id="txtapellido" class="form-control" placeholder="APELLIDO"></div>
+        <div class="col-md-6"><input type="text" id="txtapellido" class="form-control" readonly placeholder="APELLIDO"></div>
       	<div class="col-md-6">DIRECCION</div>
-        <div class="col-md-6"><input type="text" id="txtdireccion" class="form-control" placeholder="DIRECCION"></div>
+        <div class="col-md-6"><input type="text" id="txtdireccion" class="form-control" readonly placeholder="DIRECCION"></div>
       </div>
 </div>
   <div class="col-md-6">
   		<div class="alert alert-info" role="alert">DATOS FACTURA</div>
         <div class="col-md-6">NUMERO FACTURA</div>
-        <div class="col-md-6"><input type="text" id="txtnfactura" class="form-control" required value="{{ nFactura }}"></div>
+        <div class="col-md-6"><input type="text" id="txtnfactura" class="form-control" readonly="" required value="{{ nFactura }}"></div>
   		<div class="col-md-6">FECHA</div>
-        <div class="col-md-6"><input type="text" id="txtfecha"  class="form-control"  ></div>
+        <div class="col-md-6"><input type="text" id="txtfecha"  readonly class="form-control"  ></div>
   </div>
 </div>
 </div>
@@ -78,14 +78,14 @@
       
         		<div class="row">
         <div class="col-md-6">SUBTOTAL</div>
-        <div class="col-md-6"><input type="text"  id="txtsubotal" value="0" class="form-control" placeholder="normal sized input group"></div>
+        <div class="col-md-6"><input type="text"  id="txtsubotal" value="0" class="form-control" readonly placeholder="normal sized input group"></div>
         <div class="col-md-6">IVA</div>
-        <div class="col-md-6"><input type="text"  id="txtiva" value="0" class="form-control" placeholder="normal sized input group"></div>
+        <div class="col-md-6"><input type="text"  id="txtiva" value="0" class="form-control" readonly placeholder="normal sized input group"></div>
         <div class="col-md-6">DESCUENTO</div>
-        <div class="col-md-6"><input type="text" id="txtdescuento" value="0" class="form-control" placeholder="normal sized input group"></div>
+        <div class="col-md-6"><input type="text" id="txtdescuento" value="0" class="form-control" readonly placeholder="normal sized input group"></div>
       	<div class="col-md-6">TOTAL</div>
-        <div class="col-md-6"><input type="text" id="txttotal" value="0" class="form-control" placeholder="normal sized input group"></div>
-      </div>
+        <div class="col-md-6"><input type="text" id="txttotal" value="0" class="form-control" readonly placeholder="normal sized input group"></div>
+      </div>readonly 
 
       </div>
     </div>
@@ -132,8 +132,6 @@
 
         };
 				
-
-				
 			{% endfor %}
 		}
 
@@ -164,9 +162,9 @@
 						codigo.innerHTML="{{producto.id}}";
 						producto.innerHTML="{{producto.pro_nombre}}";
 						cantidad.innerHTML =productoCant;
-						preciou.innerHTML= parseFloat("{{producto.pro_pvp}}");
+						preciou.innerHTML= parseFloat(re("{{producto.pro_pvp}}"));
             console.log({{producto.pro_pvp}});
-						pt = parseFloat("{{ producto.pro_pvp }}") * parseInt(productoCant);
+						pt = parseFloat(re("{{ producto.pro_pvp }}")) * parseInt(productoCant);
             console.log(pt)
 						preciot.innerHTML=pt;
 
@@ -180,6 +178,18 @@
 			 {% endfor %}
 
 		}
+    function re(texto){
+      var cadena = texto;
+      var aux='';
+      for(i=0; i<cadena.length; i++) 
+        if (cadena.charAt(i)==','){
+           aux=aux+".";
+        }else{
+          aux=aux+cadena.charAt(i);
+        }
+        return aux;
+    }
+
 
     function eliminarfilas(t){
       var td = t.parentNode;

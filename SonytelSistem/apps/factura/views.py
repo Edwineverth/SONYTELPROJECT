@@ -3,8 +3,8 @@ from apps.sistema.models import Factura,Clientes,Facturadetalle,Productos
 from apps.sistema.views import registrarCliente
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render, redirect, render_to_response, RequestContext, HttpResponse, HttpResponseRedirect
-
-from django.views.generic import TemplateView,CreateView,ListView,UpdateView,DeleteView
+from django.views.generic import TemplateView,CreateView,ListView,UpdateView,DeleteView,DetailView
+from django.views.generic.detail import DetailView
 from django.http import HttpResponse
 from django.core import serializers	
 from django.contrib import admin
@@ -21,9 +21,28 @@ class listarFacturas(ListView):
 		ctx['clientes'] = Clientes.objects.all()
 		return ctx
 
+
+class detalleFactura(DetailView):
+	template_name='detalleFactura/prueba.html'
+	context_object_name='listarFacturas'
+	model=Factura
+	def get_context_data(self, **kwargs):
+		ctx = super(detalleFactura, self).get_context_data(**kwargs)
+		ctx['detalles'] = Facturadetalle.objects.all()
+		ctx['productos'] = Productos.objects.all()
+		return ctx
+
+class filtrarAjaxFactura(TemplateView):
+	def get(self,request,*args,**kwargs):
+		nombrefact = request.GET.get('nombre')
+		print nombrefact
+		cliente = Clientes.objects.filter(cli_nombre__contains=nombrefact)
+		modelador = Factura.objects.filter(cli_id ='1')
+		data = serializers.serialize('json',modelador,fields=('fac_subtotal','fac_iva','fac_descuento','fac_total','fac_fecha','fac_estado','cli_id'))
+		return HttpResponse(data,content_type='application/json')
+
 				
 def generarVentaFactura(request):
-
 	objetosplantilla = {"listarclientes":Clientes.objects.filter(cli_estado="A"),"listarProductos":Productos.objects.all(),'nFactura': 1+Factura.objects.count()}
 	return render_to_response('factura/crear.html', objetosplantilla, context_instance=RequestContext(request))
 
