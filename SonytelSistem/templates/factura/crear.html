@@ -120,14 +120,18 @@
 		function buscarCliente(){
 			var cedulaBuscar=document.getElementById("txtcedula").value;
 			{% for cliente in listarclientes %}
-				var nombre = "{{cliente.cli_nombre}}"
-				var apellido = "{{cliente.cli_apellido}}"
-				var direccion = "{{cliente.cli_direccion}}"
-				var telefono = "{{cliente.cli_telefono}}"
-				var ciudad = "{{cliente.cli_ciudad}}"
-				document.getElementById("txtnombre").value=nombre;
-				document.getElementById("txtapellido").value=apellido;
-				document.getElementById("txtdireccion").value=direccion;
+        if ('{{cliente.cli_cedula}}'==cedulaBuscar) {
+          var nombre = "{{cliente.cli_nombre}}"
+          var apellido = "{{cliente.cli_apellido}}"
+          var direccion = "{{cliente.cli_direccion}}"
+          var telefono = "{{cliente.cli_telefono}}"
+          var ciudad = "{{cliente.cli_ciudad}}"
+          document.getElementById("txtnombre").value=nombre;
+          document.getElementById("txtapellido").value=apellido;
+          document.getElementById("txtdireccion").value=direccion;
+
+        };
+				
 
 				
 			{% endfor %}
