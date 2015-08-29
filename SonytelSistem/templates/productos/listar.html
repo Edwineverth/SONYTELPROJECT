@@ -68,10 +68,11 @@
 			            		<td >{{cat.mar_nombre}}</td>
 			            	{% endif %}
 
-			            <td ><button class='btn btn-success' id="btnupdate{{pro.id}}" value="{{pro.id}}" onclick='actualizarDatos({{pro.id}})'><span class="glyphicon glyphicon-pencil"></i></button> </td>
-			            <td ><button class='btn btn-success' id="btndelete" value="{{pro.id}}" onclick='eliminarDatos({{pro.id}})'><span class="glyphicon glyphicon-remove"></i></button></td>
+			            
 			            
 			            {% endfor %}
+			            <td ><button class='btn btn-success' id="btnupdate{{pro.id}}" value="{{pro.id}}" onclick='actualizarDatos({{pro.id}})'><span class="glyphicon glyphicon-pencil"></i></button> </td>
+			            <td ><button class='btn btn-success' id="btndelete" value="{{pro.id}}" onclick='eliminarDatos({{pro.id}})'><span class="glyphicon glyphicon-remove"></i></button></td>
 
 			           
 			          	

@@ -22,8 +22,8 @@ class Articulossegunda(models.Model):
 
 
 class Categoria(models.Model):
-    mar_nombre = models.CharField(max_length=30)
-    mar_descripcion = models.CharField(max_length=75)
+    mar_nombre = models.CharField(max_length=30,verbose_name=u"Nombre:")
+    mar_descripcion = models.CharField(max_length=75,verbose_name=u"Descripción:")
     class Meta:
         ordering = ["id"]
     def __unicode__(self):
@@ -33,8 +33,8 @@ class Categoria(models.Model):
 
 class Ciudad(models.Model):
    
-    ciu_nombre = models.CharField(max_length=30)
-    ciu_descripcion = models.CharField(max_length=70)
+    ciu_nombre = models.CharField(max_length=30,verbose_name=u"Nombre:")
+    ciu_descripcion = models.CharField(max_length=70,verbose_name=u"Descripción:")
     class Meta:
         ordering = ["id"]
     def __unicode__(self):
@@ -42,13 +42,13 @@ class Ciudad(models.Model):
 
 
 class Clientes(models.Model):
-    cli_cedula = models.CharField(max_length=10)
-    cli_nombre = models.CharField(max_length=30)
-    cli_apellido = models.CharField(max_length=30)
-    cli_telefono = models.CharField(max_length=10, blank=True)
-    cli_direccion = models.CharField(max_length=75)
-    cli_email = models.CharField(max_length=75)
-    cli_estado = models.CharField(max_length=1)
+    cli_cedula = models.CharField(max_length=10,verbose_name=u"Cedula:")
+    cli_nombre = models.CharField(max_length=30,verbose_name=u"Nombre:")
+    cli_apellido = models.CharField(max_length=30,verbose_name=u"Apellido:")
+    cli_telefono = models.CharField(max_length=10, blank=True,verbose_name=u"Telefono:")
+    cli_direccion = models.CharField(max_length=75,verbose_name=u"Dirección:")
+    cli_email = models.CharField(max_length=75,verbose_name=u"Email:")
+    cli_estado = models.CharField(max_length=1,verbose_name=u"Estado:")
     ciu = models.ForeignKey(Ciudad, blank=True, null=True)
     class Meta:
         ordering = ["id"]
@@ -117,8 +117,8 @@ class Mantenimiento(models.Model):
 
 class Mensajeria(models.Model):
  
-    men_asunto = models.CharField(max_length=30)
-    men_descripcion = models.CharField(max_length=500)
+    men_asunto = models.CharField(max_length=30,verbose_name=u"Nombre:")
+    men_descripcion = models.CharField(max_length=500,verbose_name=u"Descripción:")
     cli = models.ForeignKey(Clientes)
     class Meta:
         ordering = ["id"]
@@ -130,8 +130,8 @@ class Mensajeria(models.Model):
 
 class Modelo(models.Model):
    
-    mod_nombre = models.CharField(max_length=30)
-    mod_descripcion = models.CharField(max_length=75)
+    mod_nombre = models.CharField(max_length=30,verbose_name=u"Nombre:")
+    mod_descripcion = models.CharField(max_length=75,verbose_name=u"Descripción:")
     class Meta:
         ordering = ["id"]
     def __unicode__(self):
@@ -157,13 +157,13 @@ class OrdenDeCompra(models.Model):
 class Productos(models.Model):
    
     pro_nombre = models.CharField(max_length=30,verbose_name=u"Nombre:")
-    pro_cantidad = models.IntegerField(verbose_name=u"Nombre:")
-    pro_precio = models.FloatField(verbose_name=u"Nombre:")
-    pro_ecg = models.CharField(max_length=75, blank=True,verbose_name=u"Nombre:")
-    pro_tarifa_iva = models.FloatField(verbose_name=u"Nombre:")
-    pro_ex = models.IntegerField(verbose_name=u"Nombre:")
-    pro_pvp = models.FloatField(verbose_name=u"Nombre:")
-    mar = models.ForeignKey(Categoria, blank=True, null=True,verbose_name=u"Nombre:")
+    pro_cantidad = models.IntegerField(verbose_name=u"Cantidad:")
+    pro_precio = models.FloatField(verbose_name=u"Precio:")
+    pro_ecg = models.CharField(max_length=75, blank=True,verbose_name=u"ECG:")
+    pro_tarifa_iva = models.FloatField(verbose_name=u"IVA:")
+    pro_ex = models.IntegerField(verbose_name=u"Cant Min:")
+    pro_pvp = models.FloatField(verbose_name=u"Precio Venta Publico:")
+    mar = models.ForeignKey(Categoria, blank=True, null=True,verbose_name=u"Marca:")
     class Meta:
         ordering = ["id"]
     def __unicode__(self):
@@ -173,7 +173,7 @@ class Productos(models.Model):
 
 class Proveedor(models.Model):
    
-    prov_ruc = models.CharField(max_length=10,verbose_name=u"RUC")
+    prov_ruc = models.CharField(max_length=13,verbose_name=u"RUC")
     prov_cedula = models.CharField(max_length=10,verbose_name=u"CEDULA")
     prov_nombre = models.CharField(max_length=30,verbose_name=u"NOMBRE")
     prov_representante = models.CharField(max_length=50,verbose_name=u"REPRESENTANTE")
@@ -194,7 +194,6 @@ class Repuestos(models.Model):
     class Meta:
         ordering = ["id"]
 
- 
 
 class Solicitudmantenimiento(models.Model):
  
